@@ -1,0 +1,8 @@
+baseURL: "http://www.cybersmith.co.uk/"
+title: "Cybersmith"
+languageCode: "en-GB"
+disableKinds: ["taxonomy", "taxonomyTerm", "RSS"]
+enableRobotsTXT: true
+disableHugoGeneratorInject: true
+sitemap:
+    changefreq: monthly
