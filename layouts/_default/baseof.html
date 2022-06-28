@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="Description" content="{{ .Description }}" />
+
+        {{ if .IsHome }}
+            <title>Cybersmith - Forging Your Security</title>
+        {{else}}
+            <title>Cybersmith - {{ .Page.Title }}</title>
+        {{ end }}
+
+        {{ $faviconAppleTouch := resources.Get "/favicon-apple-touch.png" }}
+        {{ $favicon32 := resources.Get "/favicon-32x32.png" }}
+        {{ $favicon16 := resources.Get "/favicon-16x16.png" }}
+        {{ $favicon := resources.Get "/favicon.ico" }}
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ $faviconAppleTouch.RelPermalink }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ $favicon32.RelPermalink }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ $favicon16.RelPermalink }}">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ $favicon.RelPermalink }}" />
+        
+        {{ define "partials/font" }}
+            {{ $font := resources.Get (print "fonts/" . ) }}
+            {{ $fontFingerprint := $font | fingerprint "sha512" }}
+            <link href="{{ $font.RelPermalink }}" rel="preload" as="font" type="font/ttf" integrity="{{ $fontFingerprint.Data.Integrity }}" crossorigin="anonymous">
+        {{ end }}
+        {{ partial "font" "spantaran.ttf" }}
+
+        {{ define "partials/css" }}
+            {{ $css := resources.Get (print "css/" . ".css") | minify | fingerprint "sha512" }}
+            <link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous" />
+        {{ end }}
+        {{ partial "css" "base" }}
+        {{ range .Params.css }}
+            {{ partial "css" . }}
+        {{ end }}
+
+        {{ define "partials/ts" }}
+            {{ $ts := resources.Get (print "ts/" . ".ts") | js.Build | minify | fingerprint "sha512" }}
+            <script src="{{ $ts.RelPermalink }}" defer integrity="{{ $ts.Data.Integrity }}" crossorigin="anonymous"></script>
+        {{ end }}
+        {{ if isset .Params "ts" }}
+            {{ range .Params.ts }}
+                {{ partial "ts" . }}
+            {{ end }}
+        {{ end }}
+    </head>
+    <body>
+
+    </body>
+</html>
