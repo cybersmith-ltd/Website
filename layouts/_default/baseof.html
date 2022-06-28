@@ -25,7 +25,7 @@
             {{ $fontFingerprint := $font | fingerprint "sha512" }}
             <link href="{{ $font.RelPermalink }}" rel="preload" as="font" type="font/ttf" integrity="{{ $fontFingerprint.Data.Integrity }}" crossorigin="anonymous">
         {{ end }}
-        {{ partial "font" "spantaran.ttf" }}
+        {{ partial "font" "krona-one.ttf" }}
 
         {{ define "partials/css" }}
             {{ $css := resources.Get (print "css/" . ".css") | minify | fingerprint "sha512" }}
