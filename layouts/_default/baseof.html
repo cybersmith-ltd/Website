@@ -32,8 +32,10 @@
             <link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous" />
         {{ end }}
         {{ partial "css" "base" }}
-        {{ range .Params.css }}
-            {{ partial "css" . }}
+        {{ if isset .Params "css" }}
+            {{ range .Params.css }}
+                {{ partial "css" . }}
+            {{ end }}
         {{ end }}
 
         {{ define "partials/ts" }}
@@ -47,6 +49,8 @@
         {{ end }}
     </head>
     <body>
-
+        {{ block "main" . }}
+            {{ .Content }}
+        {{ end }}
     </body>
 </html>

@@ -1,8 +1,10 @@
 {{ define "main" }}
 
-{{ $svg := resources.Get "img/logos/cybersmith-logo-with-wordmark.svg" | minify }}
+<p id="cybersmith">Cybersmith<span class="yellow-fullstop">.</span></p>
+
+{{ $svg := resources.Get "img/logos/cybersmith-logo-no-background.svg" | minify }}
 <img id="cybersmith-logo" src="{{ $svg.RelPermalink }}" alt="Cybersmith anvil logo and the name of the company" />
 
-<p id="coming-jan-2023">Coming January 2023</p>
+<p id="coming-soon">Comming<br/>January 2023<span class="yellow-fullstop">.</span></p>
 
 {{ end }}
