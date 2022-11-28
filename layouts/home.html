@@ -1,10 +1,6 @@
 {{ define "main" }}
 
-<p id="cybersmith">Cybersmith<span class="yellow-fullstop">.</span></p>
-
-{{ $svg := resources.Get "img/logos/cybersmith-logo-no-background.svg" | minify }}
-<img id="cybersmith-logo" src="{{ $svg.RelPermalink }}" alt="Cybersmith anvil logo and the name of the company" />
-
-<p id="coming-soon">Coming<br/>January 2023<span class="yellow-fullstop">.</span></p>
+<p id="contact-us">Contact Us<span class="yellow-dot">:</span></p>
+<a id="email" href="mailto:info@cybersmith.co.uk">info@<wbr>cybersmith.co.uk<span class="yellow-dot">.</span></a>
 
 {{ end }}

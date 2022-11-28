@@ -33,7 +33,9 @@ body {
 }
 
 #cybersmith,
-#coming-soon {
+#contact-us,
+#email,
+footer {
     font-family: var(--krona-one);
     color: white;
     padding: 0;
@@ -45,10 +47,26 @@ body {
         font-size: 2.5em;
     }
 
-    #coming-soon {
+    #contact-us {
         font-size: 2em;
     }
 
-.yellow-fullstop {
+    #email {
+        font-size: 2em;
+        text-decoration: none;
+    }
+
+    #email:hover {
+        text-decoration: underline;
+    }
+
+.yellow-dot {
     color: var(--light-yellow);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    color: #D3D3D3;
+    font-size: 0.8em;
 }

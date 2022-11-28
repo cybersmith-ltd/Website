@@ -49,8 +49,17 @@
         {{ end }}
     </head>
     <body>
+        <header>
+            <p id="cybersmith">Cybersmith<span class="yellow-dot">.</span></p>
+            {{ $svg := resources.Get "img/logos/cybersmith-logo-no-background.svg" | minify }}
+            <img id="cybersmith-logo" src="{{ $svg.RelPermalink }}" alt="Cybersmith anvil logo" />
+        </header>
         {{ block "main" . }}
             {{ .Content }}
         {{ end }}
+        <footer>
+            <p>Cybersmith Ltd Reg In England and Wales: 14118194</p>
+            <p>At 31 Deeble Road, Kettering, NN15 7AB</p>
+        </footer>
     </body>
 </html>
