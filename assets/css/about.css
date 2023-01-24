@@ -1,0 +1,42 @@
+article p {
+    margin: 0 0 15px;
+}
+
+article h2 {
+    margin: 0 0 5px;
+    color: var(--light-yellow);
+}
+
+article .pillar-titles {
+    color: var(--light-yellow);
+}
+
+@media (max-width: 1023px) {
+    #photo-jonathon-smith {
+        display: none;
+    }
+
+    article h2 {
+        text-align: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        display: flex;
+    }
+
+    #photo-jonathon-smith {
+        margin: 0;
+    }
+    
+    #photo-jonathon-smith img {
+        margin-right: 20px;
+        border-radius: 10px;
+        border: 2px solid white;
+    }
+    
+    #photo-jonathon-smith figcaption {
+        text-align: center;
+    }
+}

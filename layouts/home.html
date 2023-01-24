@@ -1,6 +1,22 @@
 {{ define "main" }}
 
-<p id="contact-us">Contact Us<span class="yellow-dot">:</span></p>
-<a id="email" href="mailto:info@cybersmith.co.uk">info@<wbr>cybersmith.co.uk<span class="yellow-dot">.</span></a>
+<div id="introduction-text">
+    <h1>Forging Your Security<span class="yellow-dot">.</span></h1>
+    <ul>
+        <li>
+            <p>We design &amp; build bespoke cybersecurity programs that meet the needs of your organisation.</p>
+        </li>
+        <li>
+            <p>Working with clients of all sizes we offer a tailored solution at a price and complexity appropriate to your organisation.</p>
+        </li>
+        <li>
+            <p>See our <a href="/about">about</a>, <a href="/services">services</a> and <a href="/contact">contact</a> pages for more info.</p>
+        </li>
+    </ul>
+</div>
+
+{{ $svg := resources.Get "img/logos/cybersmith-logo-no-background.svg" | minify }}
+<img id="introduction-img" src="{{ $svg.RelPermalink }}" alt="Cybersmith anvil logo" />
+
 
 {{ end }}

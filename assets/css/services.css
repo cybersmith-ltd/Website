@@ -1,0 +1,18 @@
+main h2 {
+    margin: 0;
+    color: var(--light-yellow);
+}
+
+main > div {
+    margin-bottom: 15px;
+}
+
+main p {
+    margin: 8px 0;
+}
+
+@media (max-width: 1023px) {
+    .circle {
+        display: none;
+    }
+}

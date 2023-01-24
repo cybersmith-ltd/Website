@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+<figure id="photo-jonathon-smith">
+    {{ $photo := resources.Get "img/photos/jonathon-smith.png" }}
+    <img src="{{ $photo.RelPermalink }}" alt="Photo of Jonathon Smith" />
+    <figcaption>Founder - Jonathon Smith</figcaption>
+</figure>
+
+<article>
+    <h2>Where We Come From</h2>
+    <p>Cybersmith was created in 2021 out of the experiences of our founder Jonathon Smith.</p>
+    <p>After over a decade working in senior IT and cybersecurity positions, he heard many organisations say:</p>
+    <ul>
+        <li>"Security is too expensive or complex for us"</li>
+        <li>"Security gets in the way of what we do"</li>
+        <li>"Security programs are too rigid and do not work for us"</li>
+    </ul>
+
+    <h2>What We Do</h2>
+    <p>We aim to fix this by working in partnership with you to understand what makes you unique. Then we build up your security program to reflect the needs and circumstances of your specific organisation.</p>
+    <p>This can range from plugging small holes through to building an entire program from scratch.</p>
+
+    <h2>How We Do It</h2>
+    <p>Our services are built on 3 main pillars:</p>
+    <ul>
+        <li><span class="pillar-titles">Tailored For You:</span> What works for a large national organisation may not work for a small local business, we work with you to understand your needs so that we can build something that is appropriate for you.</li>
+        <li><span class="pillar-titles">Experienced &amp; Qualified:</span> We combine over a decade in the field with accreditations from multiple leading industry bodies so you can be confident in our work.</li>
+        <li><span class="pillar-titles">Bespoke Software:</span> For the customers who need it we offer our in house developed security management platform Shield to run their security program on.</li>
+    </ul>
+    
+    <h2>Where We Do It</h2>
+    <p>Centrally located in Kettering, Northamptonshire our services are open to organisations of all sizes throughout the UK.</p>
+</article>
+
+{{ end }}
