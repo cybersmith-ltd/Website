@@ -1,29 +1,41 @@
 {{ define "main" }}
 
-<div id="email">
-    <h2>Email</h2>
-    <a href="mailto:info@cybersmith.co.uk">info@cybersmith.co.uk</a>
-    <p>&nbsp;</p>
-</div>
+<h1>Contact Us<span class="yellow-dot">.</span></h1>
 
-<div id="phone">
-    <h2>Phone</h2>
-    <a href="tel:+447786003999">07786003999</a>
-    <p>&nbsp;</p>
-</div>
-
-<div id="address">
-    <h2>Address</h2>
-    <address>
-        <p>31 Deeble Road, Kettering</p>
-        <p>NN15 7AB</p>
-    </address>
-</div>
-
-<div id="companies-house">
-    <h2>Company Info</h2>
-    <p>Reg In England and Wales</p>
-    <p>Company Number: 14118194</p>
+<div id="contact-details">
+    <a href="mailto:info@cybersmith.co.uk">
+        <h2>Email<span class="white-dot">.</span></h2>
+        <p>Drop us an email on:</p>
+        <p>info@cybersmith.co.uk</p>
+        {{ $svg := resources.Get "img/icons/envelope.svg" | minify }}
+        <img class="contact-icon" src="{{ $svg.RelPermalink }}" alt="Envelope icon" />
+    </a>
+    
+    <a href="tel:+447786003999">
+        <h2>Phone<span class="white-dot">.</span></h2>
+        <p>Give us a call on:</p>
+        <p>07786003999</p>
+        {{ $svg := resources.Get "img/icons/phone.svg" | minify }}
+        <img class="contact-icon" src="{{ $svg.RelPermalink }}" alt="Phone icon" />
+    </a>
+    
+    <a href="https://www.google.co.uk/maps?q=31+Deeble+Road+Kettering+NN15+7AB">
+        <h2>Address<span class="white-dot">.</span></h2>
+        <address>
+            <p>31 Deeble Road, Kettering</p>
+            <p>NN15 7AB</p>
+        </address>
+        {{ $svg := resources.Get "img/icons/pin.svg" | minify }}
+        <img class="contact-icon" src="{{ $svg.RelPermalink }}" alt="Pin icon" />
+    </a>
+    
+    <div id="companies-house">
+        <h2>Company Info<span class="white-dot">.</span></h2>
+        <p>Reg In England and Wales</p>
+        <p>Company Number: 14118194</p>
+        {{ $svg := resources.Get "img/icons/building.svg" | minify }}
+        <img class="contact-icon" src="{{ $svg.RelPermalink }}" alt="Building icon" />
+    </div>
 </div>
 
 {{ end }}

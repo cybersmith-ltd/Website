@@ -41,10 +41,24 @@ a {
     color: var(--light-yellow);
 }
 
+.white-dot {
+    color: white;
+}
+
+h1 .yellow-dot,
+h1 .yellow-dot,
+h1 .white-dot,
+h2 .white-dot {
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 2px;
+}
+
 header {
     display: flex;
-    margin: 20px;
+    padding: 20px 0 15px 0;
+    margin: 0 20px 0 20px;
     font-family: var(--krona-one);
+    border-bottom: 1.5px dashed var(--light-yellow);
 }
 
     #cybersmith-logo-and-wordmark {
@@ -65,22 +79,32 @@ main {
     font-size: 1.2em;
 }
 
+    main h1 {
+        margin: 0 0 5px 0;
+        padding: 5px 0;
+        border-bottom: 1.5px dashed var(--light-yellow);
+        text-align: center;
+        font-size: 1.5em;
+    }
+
 footer {
     text-align: center;
     padding: 10px 0;
+    margin: 0 20px;
     display: flex;
     justify-content: center;
+    border-top: 1.5px dashed var(--light-yellow);
 }
 
     footer a, 
     footer span {
-        color: var(--dark-grey);
-        font-family: var(--krona-one);
-        font-size: 0.8em;
+        font-family: var(--arial);
     }
 
     footer a:hover {
-        color: white;
+        color: var(--light-yellow);
+        text-decoration: underline;
+        text-decoration-style: dotted;
     }
 
 @media (max-width: 1023px) {
@@ -219,10 +243,11 @@ footer {
             display: block;
             text-align: center;
             padding: 5px;
+            font-size: 1.2em;
         }
 
         header nav a:last-child {
-            border: 3px solid white;
+            border: 2px dashed var(--light-yellow);
             position: relative;
             border-radius: 8px;
         }
@@ -235,20 +260,20 @@ footer {
             bottom: -8px;
         }
 
+        header nav a:last-child::before {
+            height: 15px;
+            width: 25px;
+            border-left: 2px dotted white;
+            right: 10px;
+        }
+        
         header nav a:last-child::after {
             height: 10px;
             width: 10px;
             border-radius: 10px;
             margin-right: 10px;
-            border: 3px solid var(--light-yellow);
+            border: 2px dashed white;
             right: 0;
-        }
-
-        header nav a:last-child::before {
-            height: 15px;
-            width: 25px;
-            border-left: 3px solid var(--light-yellow);
-            right: 10px;
         }
 
             header a:hover {
@@ -260,12 +285,12 @@ footer {
             }
 
             header nav a:last-child:hover {
-                border: 3px solid var(--light-yellow);
+                border-color: white;
             }
             
             header nav a:last-child:hover::before,
             header nav a:last-child:hover::after {
-                border-color: white;
+                border-color: var(--light-yellow);
             }
 
 footer a, 

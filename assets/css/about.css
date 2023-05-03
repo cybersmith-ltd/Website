@@ -1,10 +1,15 @@
-article p {
-    margin: 0 0 15px;
+article h1 {
+ margin-bottom: 10px;
 }
 
 article h2 {
     margin: 0 0 5px;
     color: var(--light-yellow);
+    font-size: 1.2em;
+}
+
+article p {
+    margin: 0 0 15px;
 }
 
 article .pillar-titles {
@@ -22,7 +27,7 @@ article .pillar-titles {
 }
 
 @media (min-width: 1024px) {
-    main {
+    #article-content {
         display: flex;
     }
 
@@ -38,5 +43,9 @@ article .pillar-titles {
     
     #photo-jonathon-smith figcaption {
         text-align: center;
+    }
+
+    #photo-caption-founder {
+        color: var(--light-yellow);
     }
 }

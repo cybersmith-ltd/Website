@@ -1,5 +1,9 @@
 #introduction-text h1 {
     margin: 0;
+    border: none;
+    font-size: 2em;
+    text-align: left;
+    color: white;
 }
 
 #introduction-text ul {
