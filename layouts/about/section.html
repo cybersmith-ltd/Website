@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <article>
-    <h1>About Us &amp; Our History<span class="yellow-dot">.</span></h1>
+    <h1>About<span class="yellow-dot">.</span></h1>
     <div id="article-content">
         <figure id="photo-jonathon-smith">
             {{ $photo := resources.Get "img/photos/jonathon-smith.png" }}
@@ -10,29 +10,63 @@
         </figure>
         
         <div id="article-text">
-            <h2>Where We Come From<span class="white-dot">.</span></h2>
-            <p>Cybersmith was created in 2021 out of the experiences of our founder Jonathon Smith.</p>
-            <p>After over a decade working in senior IT and cybersecurity positions, he heard many organisations say:</p>
-            <ul>
-                <li>"Security is too expensive or complex for us"</li>
-                <li>"Security gets in the way of what we do"</li>
-                <li>"Security programs are too rigid and do not work for us"</li>
-            </ul>
-        
-            <h2>What We Do<span class="white-dot">.</span></h2>
-            <p>We aim to fix this by working in partnership with you to understand what makes you unique. We help you build a security program that reflects the needs of your organisation.</p>
-            <p>This can range from plugging small holes through to building an entire program from scratch.</p>
-        
-            <h2>How We Do It<span class="white-dot">.</span></h2>
-            <p>Our services are built on 3 main pillars:</p>
-            <ul>
-                <li><span class="pillar-titles">Tailored For You:</span> What works for a large national organisation may not work for a small local business, we work with you to understand your needs so that we can build something that is appropriate for you.</li>
-                <li><span class="pillar-titles">Experience:</span> With over a decade in the field there we can draw on a huge range of experiences to stop you making the same mistakes others have.</li>
-                <li><span class="pillar-titles">Qualified:</span> Accreditations from multiple leading industry bodies means you can be confident in our work.</li>
-            </ul>
+            <h2>What<span class="white-dot">.</span></h2>
+            <p>We specalise in technical cybersecurity testing, such as Penetration Testing, Due Dilgence Audits & Cyber Essentials+ Certification.</p>
             
-            <h2>Where We Do It<span class="white-dot">.</span></h2>
-            <p>Centrally located in Kettering, Northamptonshire our services are open to organisations of all sizes throughout the UK.</p>
+            <h2>Why<span class="white-dot">.</span></h2>
+            <p>We only provide cybersecurity testing. Nothing else. We believe technical testing requires experts who are:</p>
+            <ul>
+                <li><span class="why-title">Specialists:</span> Deep understanding of the technologies you are testing only comes from being a focused specalist like us.</li>
+                <li><span class="why-title">Qualified:</span> Accreditations from multiple leading industry bodies means you can be confident in our ability to deliver.</li>
+                <li><span class="why-title">Experienced:</span> Over a decade as a web developer &amp; IT Manager means we understand the job your team are doing.</li>
+                <li><span class="why-title">Communicators:</span> A focus on simple clear english means both technical &amp; non-technical readers understand our reports.</li>
+            </ul>
+
+            <h2>Who<span class="white-dot">.</span></h2>
+            <p>Cybersmith was created by Jonathon Smith in 2021 to sell his services as a technical cybersecurity tester. He is a hands-on technology leader who spent over a decade building the tech of an automotive finance business, before leading its sale to private investors as Chief Information Officer &amp; IT Director.</p>
+            <p>When buying cybersecurity testing, you are paying for the person doing the test. We make it clear who will be your tester.</p>
+            <p>An experienced web developer, whose systems have won industry awards and acomplished technology leader who has built the technology for a company from the ground up. Find out more about Jonathon on <a href="https://www.linkedin.com/in/jonathon-ronald-smith/" class="dotted-link">LinkedIn</a> or read his CV:</p>
+
+            <div id="cv-list">
+                <a class="panel" href="/cv/pentesting-and-technical-audit">
+                    <h3>Pentesting &amp; Technical Audit</h3>
+                    <div>
+                        <p>Cybersecurity testing specalist focused on: Pentesting, Cyber Essentials+ &amp; Due Diligence.</p>
+                        
+                        {{ $web := resources.Get "img/icons/generic/magnifying-glass.svg" | minify }}
+                        <img src="{{ $web.RelPermalink }}" alt="Web Icon" />
+
+                        <p class="click-for-info">Click To Read This CV</p>
+                    </div>
+                </a>
+
+                <a class="panel" href="/cv/web-development">
+                    <h3>Web Development</h3>
+                    <div>
+                        <p>Full stack C# .NET Core web developer with a specialism in business and data systems.</p>
+                        
+                        {{ $web := resources.Get "img/icons/generic/web.svg" | minify }}
+                        <img src="{{ $web.RelPermalink }}" alt="Web Icon" />
+
+                        <p class="click-for-info">Click To Read This CV</p>
+                    </div>
+                </a>
+
+                <a class="panel" href="/cv/leadership">
+                    <h3>Leadership</h3>
+                    <div>
+                        <p>Seasoned technology leader who works across the entire spectrum of IT &amp; cybersecurity.</p>
+                        
+                        {{ $web := resources.Get "img/icons/generic/leadership.svg" | minify }}
+                        <img src="{{ $web.RelPermalink }}" alt="Web Icon" />
+                        
+                        <p class="click-for-info">Click To Read This CV</p>
+                    </div>
+                </a>
+            </div>
+
+            <h2>Where<span class="white-dot">.</span></h2>
+            <p>We are centrally located in Kettering, Northamptonshire. Our services are open to organisations of all sizes throughout the UK.</p>
         </div>
     </div>
 </article>

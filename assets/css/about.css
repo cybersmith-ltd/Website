@@ -1,20 +1,74 @@
 article h1 {
- margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 article h2 {
     margin: 0 0 5px;
     color: var(--light-yellow);
-    font-size: 1.2em;
+    font-size: 1.4rem;
 }
 
 article p {
     margin: 0 0 15px;
 }
 
-article .pillar-titles {
+.panel {
+    background: var(--background-gray);
+    color: black;
+    font-family: var(--arial);
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.why-title {
     color: var(--light-yellow);
 }
+
+#cv-list {
+    margin: 10px 0;
+}
+
+    #cv-list a {
+        display: flex;
+        flex-direction: column;
+        transition: transform .1s linear;
+    }
+
+        #cv-list a:hover {
+            transform: scale(1.01);
+        }
+
+            #cv-list a:hover .click-for-info {
+                text-decoration: underline;
+            }
+
+    #cv-list h3 {
+        text-align: center;
+        border-bottom: 1px solid black;
+        margin: 5px;
+    }
+
+    #cv-list a div {
+        padding: 0 10px 10px 10px;
+        text-align: center;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #cv-list p {
+        margin: 0;
+    }
+
+    #cv-list img {
+        height: 150px;
+        margin: 5px 0;
+    }
+
+    #cv-list .click-for-info {
+        font-weight: bold;
+    }
 
 @media (max-width: 1023px) {
     #photo-jonathon-smith {
@@ -24,11 +78,30 @@ article .pillar-titles {
     article h2 {
         text-align: center;
     }
+
+    #cv-list a {
+        margin-bottom: 10px;
+    }
 }
 
 @media (min-width: 1024px) {
     #article-content {
         display: flex;
+    }
+
+    #cv-list {
+        display: flex;
+        align-items: stretch;
+    }
+
+    #cv-list a {
+        flex-grow: 1;
+        flex-basis: 0;
+        margin-right: 10px;
+    }
+
+    #cv-list a:last-child {
+        margin-right: 0;
     }
 
     #photo-jonathon-smith {

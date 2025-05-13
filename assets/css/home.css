@@ -1,14 +1,12 @@
 #introduction-text h1 {
     margin: 0;
-    border: none;
-    font-size: 2em;
     text-align: left;
     color: white;
 }
 
 #introduction-text ul {
     margin: 0;
-    padding-left: 1em;
+    padding-left: 1rem;
 }
 
     #introduction-text li {
@@ -23,15 +21,7 @@
 
         #introduction-text p {
             margin: 0;
-        }
-
-        #introduction-text a {
-            text-decoration: underline;
-            text-decoration-style: dotted;
-        }
-
-        #introduction-text a:hover {
-            color: var(--light-yellow);
+            font-size: 1.2rem;
         }
 
 @media (max-width: 1023px) {
@@ -60,7 +50,11 @@
         flex-direction: column;
         justify-content: center
     }
-    
+
+        #introduction-text h1 {
+            border: none;
+        }
+
     #introduction-img {
         width: 50%;
     }

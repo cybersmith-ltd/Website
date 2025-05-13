@@ -1,13 +1,13 @@
 {{ define "main" }}
 
-<h1>Contact Us<span class="yellow-dot">.</span></h1>
+<h1>Contact<span class="yellow-dot">.</span></h1>
 
 <div id="contact-details">
     <a href="mailto:info@cybersmith.co.uk">
         <h2>Email<span class="white-dot">.</span></h2>
         <p>Drop us an email on:</p>
         <p>info@cybersmith.co.uk</p>
-        {{ $svg := resources.Get "img/icons/envelope.svg" | minify }}
+        {{ $svg := resources.Get "img/icons/generic/envelope.svg" | minify }}
         <img class="contact-icon" src="{{ $svg.RelPermalink }}" alt="Envelope icon" />
     </a>
     
@@ -15,7 +15,7 @@
         <h2>Phone<span class="white-dot">.</span></h2>
         <p>Give us a call on:</p>
         <p>07786003999</p>
-        {{ $svg := resources.Get "img/icons/phone.svg" | minify }}
+        {{ $svg := resources.Get "img/icons/generic/phone.svg" | minify }}
         <img class="contact-icon" src="{{ $svg.RelPermalink }}" alt="Phone icon" />
     </a>
     
@@ -25,7 +25,7 @@
             <p>31 Deeble Road, Kettering</p>
             <p>NN15 7AB</p>
         </address>
-        {{ $svg := resources.Get "img/icons/pin.svg" | minify }}
+        {{ $svg := resources.Get "img/icons/generic/pin.svg" | minify }}
         <img class="contact-icon" src="{{ $svg.RelPermalink }}" alt="Pin icon" />
     </a>
     
@@ -33,7 +33,7 @@
         <h2>Company Info<span class="white-dot">.</span></h2>
         <p>Reg In England and Wales</p>
         <p>Company Number: 14118194</p>
-        {{ $svg := resources.Get "img/icons/building.svg" | minify }}
+        {{ $svg := resources.Get "img/icons/generic/building.svg" | minify }}
         <img class="contact-icon" src="{{ $svg.RelPermalink }}" alt="Building icon" />
     </div>
 </div>

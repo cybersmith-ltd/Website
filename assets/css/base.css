@@ -1,9 +1,11 @@
 :root {
     --dark-blue: #002147;
     --light-yellow: #F59F00;
+    --background-gray: #ddd;
     --dark-grey: #888888;
     --krona-one: krona-one, Arial Black, Arial, Helvetica, sans-serif;
     --arial: Arial, Helvetica, sans-serif;
+    --arial-black: Arial Black, Arial, Helvetica, sans-serif;
 }
 
 @font-face {
@@ -53,6 +55,15 @@ h2 .white-dot {
     padding-left: 2px;
 }
 
+.dotted-link {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+    .dotted-link:hover {
+        color: var(--light-yellow);
+    }
+
 header {
     display: flex;
     padding: 20px 0 15px 0;
@@ -76,15 +87,16 @@ header {
 main {
     padding: 0 20px;
     font-family: var(--arial);
-    font-size: 1.2em;
 }
 
     main h1 {
         margin: 0 0 5px 0;
         padding: 5px 0;
         border-bottom: 1.5px dashed var(--light-yellow);
+        font-family: var(--krona-one);
+        font-weight: normal;
         text-align: center;
-        font-size: 1.5em;
+        font-size: 2rem;
     }
 
 footer {
@@ -96,9 +108,9 @@ footer {
     border-top: 1.5px dashed var(--light-yellow);
 }
 
-    footer a, 
-    footer span {
+    footer a {
         font-family: var(--arial);
+        color: lightgrey;
     }
 
     footer a:hover {
@@ -223,7 +235,7 @@ footer {
     }
     
     #cybersmith-wordmark {
-        font-size: 1.5em;
+        font-size: 1.5rem;
         display: flex;
         align-items: center;
     }
@@ -243,7 +255,7 @@ footer {
             display: block;
             text-align: center;
             padding: 5px;
-            font-size: 1.2em;
+            font-size: 1.2rem;
         }
 
         header nav a:last-child {
@@ -293,12 +305,7 @@ footer {
                 border-color: var(--light-yellow);
             }
 
-footer a, 
-footer span {
-    padding: 0 10px;
-}
-
-footer a {
-    border-left: 1px solid #888888;
-}
+    footer a {
+        padding: 0 10px;
+    }
 }

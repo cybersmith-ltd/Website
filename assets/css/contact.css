@@ -5,7 +5,7 @@ main {
     main h2 {
         margin: 0;
         color: var(--light-yellow);
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
 
     main p {

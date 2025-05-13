@@ -1,44 +1,39 @@
 {{ define "main" }}
-<h1>The Services We Offer<span class="yellow-dot">.</span></h1>
+<h1>Services<span class="yellow-dot">.</span></h1>
 
-<div class="service">
-    <h2>Technology & Cybersecurity Leadership<span class="white-dot">.</span></h2>
-    {{ $svg := resources.Get "img/icons/cybersecurity-program.svg" | minify }}
-    <img class="service-icon" src="{{ $svg.RelPermalink }}" alt="Cybersecurity Program Icon" />
-    <p>We help you design and build IT &amp; security programs tailored to the needs of your organisation.</p>
-    <p>Working across the full range of cybersecurity areas, we are able to do both focused projects on a specific issue through to implementing a full security program.</p>
-</div>
-
-<div class="service">
-    <h2>Penetration Testing<span class="white-dot">.</span></h2>
-    {{ $svg := resources.Get "img/icons/penetration-test.svg" | minify }}
+<a class="service" href="/services/web-application-pentesting">
+    <h2>Web Application Pentesting<span class="white-dot">.</span></h2>
+    {{ $svg := resources.Get "img/icons/generic/web.svg" | minify }}
     <img class="service-icon" src="{{ $svg.RelPermalink }}" alt="Penetration Test Icon" />
-    <p>Our technical tests are performed by CREST Registered Penetration Testers (CRT).</p>
-    <p>We are able to provide both infrastructure and web application testing, with our testers having over 10 years experience in both IT and web development.</p>
-</div>
+    <p><span class="service-tagline">Supporting Your Developers:</span> Senior web developer with 15 years experience. We not only test your software, we guide your team to improve it.</p>
+</a>
 
-<div class="service">
-    <h2>Data Protection<span class="white-dot">.</span></h2>
-    {{ $svg := resources.Get "img/icons/data-protection.svg" | minify }}
-    <img class="service-icon" src="{{ $svg.RelPermalink }}" alt="Data Protection Icon" />
-    <p>Giving you the full picture of what data you hold and how you can best protect it.</p>
-    <p>We deliver you a compliant and effective data protection program that works for your business.</p>
-</div>
+<a class="service" href="/services/infrastructure-pentesting">
+    <h2>Infrastructure Pentesting<span class="white-dot">.</span></h2>
+    {{ $svg := resources.Get "img/icons/generic/infrastructure.svg" | minify }}
+    <img class="service-icon" src="{{ $svg.RelPermalink }}" alt="Penetration Test Icon" />
+    <p><span class="service-tagline">Securing Your Foundations:</span> Technology leader whose built infrastructure from the ground up. We understand the practicalities of securing an IT department, because we ran one for over a decade.</p>
+</a>
 
-<div class="service">
-    <h2>Certification<span class="white-dot">.</span></h2>
-    {{ $svg := resources.Get "img/icons/certification.svg" | minify }}
-    <img class="service-icon" src="{{ $svg.RelPermalink }}" alt="Certification Icon" />
-    <p>Fully qualified as a Cyber Essentials Plus Assessor, IASME CE Assessor and BSI ISO 27001 Lead Auditor.</p>
-    <p>We can guide you through the full cybersecurity certification journey from the entry level Cyber Essentials to the internationally respected ISO 27001.</p>
-</div>
-
-<div class="service">
-    <h2>Regulated Sector Consultancy<span class="white-dot">.</span></h2>
-    {{ $svg := resources.Get "img/icons/shield.svg" | minify }}
+<a class="service" href="/services/due-diligence-audits">
+    <h2>Due Diligence Audits<span class="white-dot">.</span></h2>
+    {{ $svg := resources.Get "img/icons/generic/magnifying-glass.svg" | minify }}
     <img class="service-icon" src="{{ $svg.RelPermalink }}" alt="Shield Icon" />
-    <p>Tap into over a decade of experience running the technology functions in the heavily regulated financial services sector.</p>
-    <p>We can provide you with guidance on how best to meet your regulatory obligations and keep your customers safe.</p>
-</div>
+    <p><span class="service-tagline">Accurate Timely Auditing:</span> Financial services professional with experience in due diligence on all sides. We are a trusted partner for M&amp;A &amp; private equity who understands the process.</p>
+</a>
+
+<a class="service" href="/services/cyber-essentials-plus">
+    <h2>Cyber Essentials+<span class="white-dot">.</span></h2>
+    {{ $svg := resources.Get "img/icons/generic/cert-ce-plus.svg" | minify }}
+    <img class="service-icon" src="{{ $svg.RelPermalink }}" alt="Certification Icon" />
+    <p><span class="service-tagline">Baseline For Cybersecurity:</span> Fully accredited certifying body who does everything in house. We guide you through the Cyber Essentials+ from start to finish.</p>
+</a>
+
+<a class="service" href="/services/cyber-assurance">
+    <h2>Cyber Assurance<span class="white-dot">.</span></h2>
+    {{ $svg := resources.Get "img/icons/generic/cert-ca.svg" | minify }}
+    <img class="service-icon" src="{{ $svg.RelPermalink }}" alt="Certification Icon" />
+    <p><span class="service-tagline">Building Your Cybersecurity:</span> Hands-on former IT Director &amp; Chief Information Officer. We help you build on Cyber Essentials to improve your security further with Cyber Assurance.</p>
+</a>
 
 {{ end }}
