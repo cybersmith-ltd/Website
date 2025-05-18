@@ -436,33 +436,37 @@ h1 {
             display: flex;
         }
 
-    #tech-sectors {
-        display: flex;
+    #tech-experience {
+        margin: 0 0 5px;
     }
 
-        .tech-sector {
-            flex-grow: 1;
-            flex-basis: 0;
-            border-right: 1px solid black;
+        #tech-sectors {
+            display: flex;
         }
+
+            .tech-sector {
+                flex-grow: 1;
+                flex-basis: 0;
+                border-right: 1px solid black;
+            }
+                
+                .tech-sector:last-child {
+                    border-right: none;
+                }
             
-            .tech-sector:last-child {
-                border-right: none;
-            }
-        
-            .tech-logos li {
-                width: 100%;
-            }
-            
-            .tech-logos li a {
-                flex-direction: row;
-                justify-content: flex-start;
-            }
-            
-            .tech-logos li a img {
-                margin: 0 5px;
-                height: 1rem;
-            }
+                .tech-logos li {
+                    width: 100%;
+                }
+                
+                .tech-logos li a {
+                    flex-direction: row;
+                    justify-content: flex-start;
+                }
+                
+                .tech-logos li a img {
+                    margin: 0 5px;
+                    height: 1rem;
+                }
 
     #achievements-skills {
         margin: 0;
@@ -478,6 +482,7 @@ h1 {
 
     .employment-panel {
         margin-top: 0;
+        padding: 0px 10px 5px;
     }
 
         .employer-and-time {
