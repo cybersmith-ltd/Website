@@ -1,4 +1,4 @@
-baseURL: "http://www.cybersmith.co.uk/"
+baseURL: "https://www.cybersmith.co.uk/"
 title: "Cybersmith"
 languageCode: "en-GB"
 disableKinds: ["taxonomy", "RSS"]
