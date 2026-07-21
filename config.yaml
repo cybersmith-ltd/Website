@@ -6,3 +6,5 @@ enableRobotsTXT: true
 disableHugoGeneratorInject: true
 sitemap:
     changefreq: monthly
+security:
+    allowContent: ['.*']
