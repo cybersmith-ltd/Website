@@ -1,6 +1,6 @@
 baseURL: "https://www.cybersmith.co.uk/"
 title: "Cybersmith"
-languageCode: "en-GB"
+locale: "en-GB"
 disableKinds: ["taxonomy", "RSS"]
 enableRobotsTXT: true
 disableHugoGeneratorInject: true
