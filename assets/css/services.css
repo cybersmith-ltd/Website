@@ -1,3 +1,9 @@
+.service {
+    border-bottom: 1.5px dashed var(--dark-grey);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
 .service:hover h2 {
     text-decoration: underline;
     color: white;
@@ -22,7 +28,6 @@
 
 @media (max-width: 1023px) {
     .service {
-        margin-bottom: 20px;
         display: grid;
         grid-column-gap: 10px;
         grid-template-columns: 1em 1fr;
@@ -50,7 +55,6 @@
 
 @media (min-width: 1024px) {
     .service {
-        margin-bottom: 20px;
         display: grid;
         grid-column-gap: 10px;
         grid-template-columns: 100px 1fr;

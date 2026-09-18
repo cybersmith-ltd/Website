@@ -3,7 +3,7 @@ main {
 }
 
     main h2 {
-        margin: 0;
+        margin: 0 0 2px 0;
         color: var(--light-yellow);
         font-size: 1.2rem;
     }
@@ -24,7 +24,14 @@ main {
     .contact-icon {
         width: 10%;
         display: block;
-        margin: 5px auto 20px;
+        margin: 5px auto 10px;
+    }
+
+    main a {
+        display: block;
+        border-bottom: 1.5px dashed var(--dark-grey);
+        margin-bottom: 10px;
+
     }
 }
 
@@ -34,17 +41,25 @@ main {
         flex-direction: column;
     }
 
-    #contact-details {
+    #contact-details, #address-details {
         flex-grow: 1;
         display: grid; 
-        grid-template-columns: 1fr 1fr 1fr 1fr; 
         grid-template-rows: 1fr; 
         gap: 0 5px;
         align-items: center;
     }
 
+        #contact-details { 
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 1.5px dashed var(--dark-grey);
+        }
+
+        #address-details{
+            grid-template-columns: 1fr 1fr 1fr; 
+        }
+
     .contact-icon {
-        width: 50%;
+        height: 10vh;
         display: block;
         margin: 15px auto 0;
     }
