@@ -86,7 +86,7 @@
     <div class="card price-panel">
         <div class="price-col price-col--main">
             <span class="comment-style">// Simple, fixed pricing</span>
-            <span class="price-headline">From £1,200 + VAT</span>
+            <span class="price-headline">From £1,200</span>
             <ul class="tick-list">
                 <li>
                     {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
@@ -127,8 +127,10 @@
                 </li>
             </ol>
         </div>
-        <p class="price-note">Self-assessment is a required first step of CE+, so we always include it in our price. If you have already completed it elsewhere, we can accept it and offer a discount.</p>
+        <p class="price-note">Self-assessment is a required first step of CE+, we always include it in our price.<br/>If you have already completed it elsewhere within the last 3 months, we can accept it and offer a discount.</p>
     </div>
+
+    <p class="price-note">All prices ex VAT.</p>
 </section>
 
 {{ partial "get-a-quote.html" . }}

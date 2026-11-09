@@ -92,7 +92,7 @@
     <div class="card price-panel">
         <div class="price-col price-col--main">
             <span class="comment-style">// Simple, fixed pricing</span>
-            <span class="price-headline">£800 + VAT per day</span>
+            <span class="price-headline">£800 per day</span>
             <ul class="tick-list">
                 <li>
                     {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
@@ -122,6 +122,7 @@
             </ol>
         </div>
     </div>
+    <p class="price-note">All prices ex VAT.</p>
 </section>
 
 {{ partial "get-a-quote.html" . }}

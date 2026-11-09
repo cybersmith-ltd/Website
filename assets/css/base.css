@@ -314,7 +314,7 @@ footer {
 .section-intro {
     margin: 0;
     color: var(--text-soft);
-    max-width: 680px;
+    max-width: 750px;
 }
 
 .hero {
