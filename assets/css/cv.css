@@ -1,9 +1,33 @@
+/* CV pages. These load after base.css. */
+
+:root {
+    --dark-blue: #002147;
+    --background-gray: #ddd;
+    --arial: Arial, Helvetica, sans-serif;
+    --arial-black: Arial Black, Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
 main {
+    position: relative;
     padding: 0 1% 1% 1%;
+    font-family: var(--arial);
+    font-size: 16px;
+    line-height: normal;
 }
 
 main h1 {
+    margin: 0 0 5px 0;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--amber-line);
     font-family: var(--arial-black);
+    font-weight: normal;
+    text-align: center;
+    font-size: 2rem;
 }
 
 main h2, main h3 {
@@ -151,7 +175,7 @@ h1 {
         }
 
             .tech-logos a:hover {
-                transform: scale(1.2); 
+                transform: scale(1.2);
             }
 
             .tech-logos a img {
@@ -215,7 +239,7 @@ h1 {
     .employment-panel h2{
         margin: 0;
     }
-    
+
     .employer-and-time {
         display: block;
         border-top: 1px solid black;
@@ -263,10 +287,10 @@ h1 {
 
     #download-pdf {
         position: absolute;
-        top: 1%;
+        top: 10px;
         left: 2%;
     }
-    
+
         #download-pdf-img {
             height: 40px;
         }
@@ -301,7 +325,7 @@ h1 {
             border-radius: 10px;
             justify-content: center;
         }
-        
+
         .tech-logos li {
             width: 50%;
         }
@@ -351,7 +375,7 @@ h1 {
             height: 3rem;
             margin: 5px 0;
         }
-        
+
     #achievements-skills {
         display: flex;
         margin-top: 10px;
@@ -395,7 +419,8 @@ h1 {
 }
 
 @media print {
-    body {
+    body,
+    main {
         background: white;
         font-size: 14px;
     }
@@ -449,20 +474,20 @@ h1 {
                 flex-basis: 0;
                 border-right: 1px solid black;
             }
-                
+
                 .tech-sector:last-child {
                     border-right: none;
                 }
-            
+
                 .tech-logos li {
                     width: 100%;
                 }
-                
+
                 .tech-logos li a {
                     flex-direction: row;
                     justify-content: flex-start;
                 }
-                
+
                 .tech-logos li a img {
                     margin: 0 5px;
                     height: 1rem;
@@ -493,7 +518,7 @@ h1 {
         .employment-duration {
             display: inline;
         }
-    
+
     #personal-summary {
         margin: 0;
     }

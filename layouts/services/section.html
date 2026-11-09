@@ -1,40 +1,9 @@
 {{ define "main" }}
 
-<h1>Services<span class="yellow-dot">.</span></h1>
-
-<a class="service" href="/services/web-application-pentesting">
-    <h2>Web Application Pentesting<span class="white-dot">.</span></h2>
-    {{ $svg := resources.Get "img/icons/generic/web.svg" | minify }}
-    <img class="service-icon" src="{{ $svg.RelPermalink }}" alt="Web Application Pentesting Icon" />
-    <p><span class="service-tagline">Supporting Your Developers:</span> Delivered by a senior developer with 15 years' experience. We not only test your software, we guide your team to improve it.</p>
-</a>
-
-<a class="service" href="/services/infrastructure-pentesting">
-    <h2>Infrastructure Pentesting<span class="white-dot">.</span></h2>
-    {{ $svg := resources.Get "img/icons/generic/infrastructure.svg" | minify }}
-    <img class="service-icon" src="{{ $svg.RelPermalink }}" alt="Infrastructure Pentesting Icon" />
-    <p><span class="service-tagline">Accredited &amp; Experienced:</span> Provided by a tester with over a decade of real world IT management experience, backed up with industry standard accreditations from CREST.</p>
-</a>
-
-<a class="service" href="/services/due-diligence-audits">
-    <h2>Due Diligence Audits<span class="white-dot">.</span></h2>
-    {{ $svg := resources.Get "img/icons/generic/magnifying-glass.svg" | minify }}
-    <img class="service-icon" src="{{ $svg.RelPermalink }}" alt="Due Diligence Audit Icon" />
-    <p><span class="service-tagline">Accurate Timely Auditing:</span> Trusted partner for M&amp;A &amp; private equity. With experience in due diligence on all sides, we understand the process &amp; will work to your timelines.</p>
-</a>
-
-<a class="service" href="/services/cyber-essentials-plus">
-    <h2>Cyber Essentials+<span class="white-dot">.</span></h2>
-    {{ $svg := resources.Get "img/icons/generic/cert-ce-plus.svg" | minify }}
-    <img class="service-icon" src="{{ $svg.RelPermalink }}" alt="Cyber Essentials+ Icon" />
-    <p><span class="service-tagline">Secure Your Foundations:</span> Accredited certifying body who does everything in house. Let us guide you through Cyber Essentials+ from start to finish.</p>
-</a>
-
-<a class="service" href="/services/cyber-assurance">
-    <h2>Cyber Assurance<span class="white-dot">.</span></h2>
-    {{ $svg := resources.Get "img/icons/generic/cert-ca.svg" | minify }}
-    <img class="service-icon" src="{{ $svg.RelPermalink }}" alt="Cyber Assurance Icon" />
-    <p><span class="service-tagline">Build Up Your Security:</span> Work with a former IT Director &amp; build on Cyber Essentials to improve your security further with Cyber Assurance.</p>
-</a>
+<section class="hero">
+    <h1 class="page-title">Services<span class="dot">.</span></h1>
+    <p class="hero-sub-title">Specialists in cybersecurity testing, auditing and certification.</p>
+    {{ partial "service-cards.html" (dict "heading" "h2") }}
+</section>
 
 {{ end }}

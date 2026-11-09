@@ -1,58 +1,30 @@
 {{ define "main" }}
 
-<h1>Contact<span class="yellow-dot">.</span></h1>
-
-<div id="contact-details">
-    <a href="mailto:info@cybersmith.co.uk">
-        <h2>Email<span class="white-dot">.</span></h2>
-        <p>info@cybersmith.co.uk</p>
-        {{ $svg := resources.Get "img/icons/generic/envelope.svg" | minify }}
-        <img class="contact-icon" src="{{ $svg.RelPermalink }}" alt="Envelope icon" />
-    </a>
-    
-    <a href="tel:+447786003999">
-        <h2>Phone<span class="white-dot">.</span></h2>
-        <p>07786003999</p>
-        {{ $svg := resources.Get "img/icons/generic/phone.svg" | minify }}
-        <img class="contact-icon" src="{{ $svg.RelPermalink }}" alt="Phone icon" />
-    </a>
-       
-
-</div>
-
-<div id="address-details">
-    <a href="https://www.google.co.uk/maps?q=54.400167,-1.713644
-">
-        <h2>Office Address<span class="white-dot">.</span></h2>
-        <address>
-            <p>Penharrows</p>
-            <p>Easby</p>
-            <p>Richmond</p>
-            <p>North Yorkshire</p>
-            <p>DL10 7EU</p>
-        </address>
-        {{ $svg := resources.Get "img/icons/generic/pin.svg" | minify }}
-        <img class="contact-icon" src="{{ $svg.RelPermalink }}" alt="Pin icon" />
-    </a>
-    <a href="https://find-and-update.company-information.service.gov.uk/company/14118194">
-        <h2>Company Info<span class="white-dot">.</span></h2>
-        <p>Reg In England and Wales</p>
-        <p>Company Number: 14118194</p>
-        {{ $svg := resources.Get "img/icons/generic/building.svg" | minify }}
-        <img class="contact-icon" src="{{ $svg.RelPermalink }}" alt="Building icon" />
-    </a>
-    <a href="https://www.google.co.uk/maps?q=52.418418,+-0.698553">
-        <h2>Registered Address<span class="white-dot">.</span></h2>
-        <address>
-            <p>Abbots</p>
-            <p>Weekley Wood Lane</p>
-            <p>Weekley</p>
-            <p>Kettering</p>
-            <p>NN16 9UX</p>
-        </address>
-        {{ $svg := resources.Get "img/icons/generic/pin.svg" | minify }}
-        <img class="contact-icon" src="{{ $svg.RelPermalink }}" alt="Pin icon" />
-    </a>
-</div>
+<section class="hero contact-hero">
+    <h1 class="page-title">Contact Us<span class="dot">.</span></h1>
+    <p class="hero-sub-title">Questions, quotes or advice, just get in touch.</p>
+    <div class="card-grid contact-grid">
+        <a class="card contact-card" href="mailto:info@cybersmith.co.uk">
+            {{ partial "icon.html" (dict "name" "email-outline-amber" "size" 44) }}
+            <span class="comment-style">Email</span>
+            <span class="contact-value contact-email">info@cybersmith.co.uk</span>
+        </a>
+        <a class="card contact-card" href="tel:+447786003999">
+            {{ partial "icon.html" (dict "name" "phone-outline-amber" "size" 44) }}
+            <span class="comment-style">Phone</span>
+            <span class="contact-value">07786003999</span>
+        </a>
+        <a class="card contact-card" href="https://www.google.co.uk/maps?q=54.400167,-1.713644">
+            {{ partial "icon.html" (dict "name" "pin" "size" 44) }}
+            <span class="comment-style">Office address</span>
+            <address class="contact-address">Penharrows<br />Easby<br />Richmond<br />North Yorkshire<br />DL10 7EU</address>
+        </a>
+        <a class="card contact-card" href="https://www.google.co.uk/maps?q=52.418418,+-0.698553">
+            {{ partial "icon.html" (dict "name" "building" "size" 44) }}
+            <span class="comment-style">Registered office</span>
+            <address class="contact-address">Abbots<br />Weekley Wood Lane<br />Weekley<br />Kettering<br />NN16 9UX</address>
+        </a>
+    </div>
+</section>
 
 {{ end }}

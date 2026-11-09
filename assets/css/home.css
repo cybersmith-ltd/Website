@@ -1,61 +1,63 @@
-#introduction-text h1 {
+/* Home page */
+
+.qualification-pills {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.qualification-pill {
+    font-family: var(--mono);
+    font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    padding: 6px 14px;
+}
+
+.home-title {
     margin: 0;
-    text-align: left;
-    color: white;
+    font-family: var(--krona-one);
+    font-weight: 400;
+    font-size: clamp(36px, 6vw, 60px);
+    line-height: 1.1;
 }
 
-#introduction-text ul {
+.home-who-photo {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    border: 3px solid var(--amber);
+}
+
+.home-quote {
+    max-width: 770px;
     margin: 0;
-    font-size: 1.2rem;
-    padding-left: 1rem;
+    font-family: var(--krona-one);
+    font-size: clamp(20px, 2.4vw, 26px);
+    line-height: 1.45;
+    text-align: center;
 }
 
-    #introduction-text li {
-        margin: 15px 0;
-        list-style-type: '⚬ ';
-    }
-
-        #introduction-text li::marker {
-            color: var(--light-yellow);
-            font-weight: bold;
-        }
-
-        #introduction-text p {
-            margin: 0;
-        }
-        
-@media (max-width: 1023px) {
-    main {
-        display: grid;
-    }
-
-    #introduction-text h1 {
-        text-align: center;
-    }
-
-    #introduction-img {
-        margin: 0 auto;
-        display: block;
-    }
+.home-quote-name {
+    margin: 0;
+    font-weight: 600;
 }
 
-@media (min-width: 1024px) {
-    main {
-        display: flex;
-    }
-    
-    #introduction-text {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center
-    }
+.home-quote-role {
+    font-weight: 400;
+    color: var(--text-muted);
+}
 
-        #introduction-text h1 {
-            border: none;
-        }
-
-    #introduction-img {
-        width: 50%;
-    }
+.home-who-text {
+    margin: 12px 0 0;
+    color: var(--text-soft);
+    font-size: 16px;
+    max-width: 560px;
+    text-align: center;
 }

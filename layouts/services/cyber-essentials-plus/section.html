@@ -1,45 +1,136 @@
+{{ define "structured-data" }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": {{ printf "%s#service" .Permalink }},
+    "name": {{ .Title }},
+    "serviceType": "Cyber Essentials Plus certification",
+    "description": {{ .Description }},
+    "url": {{ .Permalink }},
+    "provider": {
+        "@id": "https://www.cybersmith.co.uk/#organisation"
+    },
+    "areaServed": "Worldwide",
+    "offers": {
+        "@type": "Offer",
+        "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": 1200,
+            "priceCurrency": "GBP",
+            "valueAddedTaxIncluded": false
+        }
+    }
+}
+</script>
+{{ end }}
+
 {{ define "main" }}
 
-<h1>Cyber Essentials+<span class="yellow-dot">.</span></h1>
+<section class="hero">
+    {{ partial "icon.html" (dict "name" "padlock-plus" "size" 56) }}
+    <h1 class="page-title">Cyber Essentials+<span class="dot">.</span></h1>
+    <p class="hero-sub-title">UK government scheme that protects against the most common cyber-attacks.</p>
+</section>
 
-<h2>What Is It<span class="white-dot">.</span></h2>
-<p>Cyber Essentials+ (CE+) is a UK government backed scheme created by the National Cyber Security Centre at GCHQ. It secures against most common internet based cyber-attacks.</p>
-<p>Certification to CE+ comes in two stages. First you fill in a self-assessment questionnaire (often called CE or CE basic), then an assessor tests your systems.</p>
+<section class="section band-dark">
+    <div class="section-head">
+        <h2 class="section-title">What Is It<span class="dot">.</span></h2>
+        <p class="section-intro">Cyber Essentials+ (CE+) is a UK government scheme backed by the National Cyber Security Centre. It protects against the most common internet-based cyber-attacks.</p>
+    </div>
+    <ol class="card-grid steps">
+        <li class="card step">
+            <span class="comment-style">// Stage 1</span>
+            <h3 class="card-title">Self-Assessment</h3>
+            <p class="card-text">We complete the Cyber Essentials questionnaire together. This is also known as CE or CE basic.</p>
+        </li>
+        <li class="card step">
+            <span class="comment-style">// Stage 2</span>
+            <h3 class="card-title">Technical Audit</h3>
+            <p class="card-text">An assessor tests your systems to verify your answers and award CE+.</p>
+        </li>
+    </ol>
+</section>
 
-<h2>What We Offer<span class="white-dot">.</span></h2>
-<p>We are a fully accredited CE+ certification body who will walk you through the process from start to finish. We are:</p>
-<ul>
-    <li><span class="colour-section">Specialists:</span> Unlike many vendors where CE+ is an extra ontop of their other activities. We are testing experts, it's all we do &amp; we do everything in house.</li>
-    <li><span class="colour-section">Qualified:</span> Our testing is only done by lead assessors who hold advanced pentesting qualifications.</li>
-    <li><span class="colour-section">Partners:</span> We don't just test you. We identify problems early &amp; find solutions to help you pass.</li>
-</ul>
-<p>We never promise a client they will pass. But we have a 100% CE+ client pass rate.</p>
-<p>That's because we promise to work with you for as long as it takes to help you pass.</p>
+<section class="section">
+    <div class="section-head">
+        <h2 class="section-title">Why Us<span class="dot">.</span></h2>
+        <p class="section-intro">As much help as you need, for as long as you need, until you pass.</p>
+    </div>
+    <div class="card-grid why-grid">
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "specialist" "size" 40) }}
+            <h3 class="card-title">Specialist</h3>
+            <p class="card-text">Testing, auditing and certification is all we do. CE+ is not an add-on for us.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "medal" "size" 40) }}
+            <h3 class="card-title">Qualified</h3>
+            <p class="card-text">Assessments are carried out by a lead assessor with advanced penetration testing qualifications.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "price-tag" "size" 40) }}
+            <h3 class="card-title">Fixed Price</h3>
+            <p class="card-text">One price agreed upfront, with no extra fees for pretesting, retesting or consultancy.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "infinity" "size" 40) }}
+            <h3 class="card-title">Full Service</h3>
+            <p class="card-text">We work with you for as long as it takes until you pass.</p>
+        </div>
+    </div>
+</section>
 
-<h2>Simple Fixed Pricing<span class="white-dot">.</span></h2>
-<p>We guarantee:</p>
-<ul>
-    <li>Fixed prices agreed upfront</li>
-    <li>No extra fees for services like pretesting or consultancy</li>
-    <li>As much of our time as you need to pass at no extra cost</li>
-    <li>Self assessment included &amp; charged at the cost we pay: £100s less than going direct.</li>
-</ul>
+<section class="section band-dark">
+    <h2 class="section-title">Pricing<span class="dot">.</span></h2>
+    <div class="card price-panel">
+        <div class="price-col price-col--main">
+            <span class="comment-style">// Simple, fixed pricing</span>
+            <span class="price-headline">From £1,200 + VAT</span>
+            <ul class="tick-list">
+                <li>
+                    {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
+                    <span>Fixed prices agreed upfront</span>
+                </li>
+                <li>
+                    {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
+                    <span>No extra fees for pretesting, retesting or consultancy</span>
+                </li>
+                <li>
+                    {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
+                    <span>As much of our time as you need to pass</span>
+                </li>
+                <li>
+                    {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
+                    <span>Self-assessment fee included at cost</span>
+                </li>
+            </ul>
+        </div>
+        <div class="price-col">
+            <span class="comment-style">// Average pricing</span>
+            <ol class="price-list">
+                <li class="price-row">
+                    <span>Micro<span class="price-sub">1–9 employees</span></span>
+                    <span class="price">£1,200–£2,000</span>
+                </li>
+                <li class="price-row">
+                    <span>Small<span class="price-sub">10–49 employees</span></span>
+                    <span class="price">£2,000–£2,500</span>
+                </li>
+                <li class="price-row">
+                    <span>Medium<span class="price-sub">50–249 employees</span></span>
+                    <span class="price">£2,500–£3,000</span>
+                </li>
+                <li class="price-row">
+                    <span>Large<span class="price-sub">250+ employees</span></span>
+                    <span class="price">£3,000+</span>
+                </li>
+            </ol>
+        </div>
+        <p class="price-note">Self-assessment is a required first step of CE+, so we always include it in our price. If you have already completed it elsewhere, we can accept it and offer a discount.</p>
+    </div>
+</section>
 
-<h2>Self-Assessment Included<span class="white-dot">.</span></h2>
-<p>CE self-assessment questionnaire is a required first step of CE+, but it also can be done on its own to just certify to CE.</p>
-<p>Providers often quote CE+ without self-assessment &amp; add it on as an extra. We find this misleading. It's not optional: You need self-assessment for CE+.</p>
-<p>If you have done self-assessment elsewhere, we can accept that &amp; offer a discount. But because we only charge it at our cost, you'll get the best value doing it with us.</p>
-
-<h2>Average Pricing<span class="white-dot">.</span></h2>
-<p>Pricing depends on your size and complexity. But on average our clients pay (ex VAT):</p>
-<ul>
-    <li>Micro: £1,200-£2,000 (1-9 Employees)</li>
-    <li>Small: £2,000-£2,500 (10-49 Employees)</li>
-    <li>Medium: £2,500-£3,000 (50-249 Employees)</li>
-    <li>Large: £3,000+ (250+ Employees)</li>
-</ul>
-
-<h2>Get A Quote<span class="white-dot">.</span></h2>
-<p>Call <a href="tel:+447786003999" class="dotted-link">07786003999</a> or email <a href="mailto:info@cybersmith.co.uk" class="dotted-link">info@cybersmith.co.uk</a> for a quote.</p>
+{{ partial "get-a-quote.html" . }}
 
 {{ end }}

@@ -1,0 +1,15 @@
+{{ $heading := .heading | default "h3" }}
+<div class="card-grid service-grid">
+    {{ range site.Data.services }}
+        <a class="card link-card" href="{{ .url }}">
+            {{ partial "icon.html" (dict "name" .icon "size" 44) }}
+            {{- if eq $heading "h2" }}
+                <h2 class="card-title">{{ .title }}</h2>
+            {{- else }}
+                <h3 class="card-title">{{ .title }}</h3>
+            {{- end }}
+            <p class="card-text">{{ .text }}</p>
+            <span class="text-link">Find out more{{ partial "icon.html" (dict "name" "arrow-right" "size" 16) }}</span>
+        </a>
+    {{ end }}
+</div>

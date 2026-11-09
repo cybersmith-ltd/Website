@@ -1,34 +1,132 @@
+{{ define "structured-data" }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": {{ printf "%s#service" .Permalink }},
+    "name": {{ .Title }},
+    "serviceType": "Cyber Assurance certification",
+    "description": {{ .Description }},
+    "url": {{ .Permalink }},
+    "provider": {
+        "@id": "https://www.cybersmith.co.uk/#organisation"
+    },
+    "areaServed": "Worldwide",
+    "offers": {
+        "@type": "Offer",
+        "priceSpecification": {
+            "@type": "PriceSpecification",
+            "minPrice": 1200,
+            "priceCurrency": "GBP",
+            "valueAddedTaxIncluded": false
+        }
+    }
+}
+</script>
+{{ end }}
+
 {{ define "main" }}
 
-<h1>Cyber Assurance<span class="yellow-dot">.</span></h1>
+<section class="hero">
+    {{ partial "icon.html" (dict "name" "medal" "size" 56) }}
+    <h1 class="page-title">Cyber Assurance<span class="dot">.</span></h1>
+    <p class="hero-sub-title">Builds on Cyber Essentials to provide greater assurance, beyond just the essentials.</p>
+</section>
 
-<h2>What Is It<span class="white-dot">.</span></h2>
-<p>Cyber Assurance (CA) is a scheme run by <a href="https://iasme.co.uk/iasme-cyber-assurance/" class="dotted-link">IASME</a>, the body that also runs Cyber Essentials (CE). It builds on CE to further secure your systems from a wider range of attacks.</p>
-<p>Just like CE it comes in two stages. First you fill in a self-assessment questionnaire, then an assessor tests your systems.</p>
+<section class="section band-dark">
+    <div class="section-head">
+        <h2 class="section-title">What Is It<span class="dot">.</span></h2>
+        <p class="section-intro">Cyber Assurance (CA) is run by IASME, who also run Cyber Essentials. It builds on Cyber Essentials to protect your systems from a wider range of attacks.</p>
+    </div>
+    <ol class="card-grid steps">
+        <li class="card step">
+            <span class="comment-style">// Level 1</span>
+            <h3 class="card-title">Self-Assessment</h3>
+            <p class="card-text">We complete the Cyber Assurance questionnaire together.</p>
+        </li>
+        <li class="card step">
+            <span class="comment-style">// Level 2</span>
+            <h3 class="card-title">Technical Audit</h3>
+            <p class="card-text">An assessor tests your systems to verify your answers.</p>
+        </li>
+    </ol>
+</section>
 
-<h2>What We Offer<span class="white-dot">.</span></h2>
-<p>We are a fully accredited CA certification body who will walk you through the process from start to finish. We are:</p>
-<ul>
-    <li><span class="colour-section">Specialists:</span> We are testing experts, it's all we do &amp; we do everything in house.</li>
-    <li><span class="colour-section">Qualified:</span> Our testing is done by a former IT Director who holds advanced pentesting qualifications.</li>
-    <li><span class="colour-section">Partners:</span> We don't just test you. We identify problems early &amp; find solutions to help you pass.</li>
-</ul>
-<p>We never promise a client they will pass. But we have a 100% CA client pass rate.</p>
-<p>That's because we promise to work with you for as long as it takes to help you pass.</p>
+<section class="section">
+    <div class="section-head">
+        <h2 class="section-title">Why Us<span class="dot">.</span></h2>
+        <p class="section-intro">As much help as you need, for as long as you need, until you pass.</p>
+    </div>
+    <div class="card-grid why-grid">
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "specialist" "size" 40) }}
+            <h3 class="card-title">Specialist</h3>
+            <p class="card-text">Testing, auditing and certification is all we do.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "medal" "size" 40) }}
+            <h3 class="card-title">Qualified</h3>
+            <p class="card-text">Assessments are carried out by a former IT Director.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "price-tag" "size" 40) }}
+            <h3 class="card-title">Fixed Price</h3>
+            <p class="card-text">One price agreed upfront, with no extra fees for pretesting, retesting or consultancy.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "infinity" "size" 40) }}
+            <h3 class="card-title">Full Service</h3>
+            <p class="card-text">We work with you for as long as it takes until you pass.</p>
+        </div>
+    </div>
+</section>
 
-<h2>Simple Fixed Pricing<span class="white-dot">.</span></h2>
-<p>We guarantee:</p>
-<ul>
-    <li>Fixed prices agreed upfront</li>
-    <li>No extra fees for services like pretesting or consultancy</li>
-    <li>As much of our time as you need to pass at no extra cost</li>
-</ul>
+<section class="section band-dark">
+    <h2 class="section-title">Pricing<span class="dot">.</span></h2>
+    <div class="card price-panel">
+        <div class="price-col price-col--main">
+            <span class="comment-style">// Simple, fixed pricing</span>
+            <span class="price-headline">From £1,200 + VAT</span>
+            <ul class="tick-list">
+                <li>
+                    {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
+                    <span>Fixed prices agreed upfront</span>
+                </li>
+                <li>
+                    {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
+                    <span>No extra fees for pretesting, retesting or consultancy</span>
+                </li>
+                <li>
+                    {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
+                    <span>As much of our time as you need to pass</span>
+                </li>
+            </ul>
+        </div>
+        <div class="price-col">
+            <span class="comment-style">// Average pricing</span>
+            <ol class="price-list">
+                <li class="price-row">
+                    <span>Micro<span class="price-sub">1–9 employees</span></span>
+                    <span class="price">£1,200–£2,000</span>
+                </li>
+                <li class="price-row">
+                    <span>Small<span class="price-sub">10–49 employees</span></span>
+                    <span class="price">£2,000–£2,500</span>
+                </li>
+                <li class="price-row">
+                    <span>Medium<span class="price-sub">50–249 employees</span></span>
+                    <span class="price">£2,500–£3,000</span>
+                </li>
+                <li class="price-row">
+                    <span>Large<span class="price-sub">250+ employees</span></span>
+                    <span class="price">£3,000+</span>
+                </li>
+            </ol>
+        </div>
+        <p class="price-note">Cyber Assurance also requires Cyber Essentials, which is priced separately.</p>
+    </div>
+</section>
 
-<h2>Average Pricing<span class="white-dot">.</span></h2>
-<p>Pricing for CA depends on your size &amp; complexity.</p>
-<p>It is generally bundled with Cyber Essentials &amp; on average we find CA costs between £1,200 & £3,000 on top of CE.</p>
-
-<h2>Get A Quote<span class="white-dot">.</span></h2>
-<p>Call <a href="tel:+447786003999" class="dotted-link">07786003999</a> or email <a href="mailto:info@cybersmith.co.uk" class="dotted-link">info@cybersmith.co.uk</a> for a quote.</p>
+{{ partial "get-a-quote.html" . }}
 
 {{ end }}

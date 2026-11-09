@@ -1,0 +1,3 @@
+{{- $icon := resources.Get (printf "img/icons/generic/%s.svg" .name) | minify -}}
+<img class="icon" src="{{ $icon.RelPermalink }}" alt="" width="{{ .size }}" height="{{ .size }}" />
+{{- /* Trim the trailing newline so the icon sits inline */ -}}

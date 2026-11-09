@@ -1,26 +1,28 @@
 {{ define "main" }}
 
-<article>
-    <h1>Policy<span class="yellow-dot">.</span></h2>
-    <p>Here you will find links to all our company's public policies. If you are performing an audit on us, we also have non-public policies that we are able to share with you.</p>
-
-    <div class="policy">
-        {{ $svg := resources.Get "img/icons/generic/privacy.svg" | minify }}
-        <h2><img class="policy-icon" src="{{ $svg.RelPermalink }}" alt="Privacy Icon" /> Privacy Policy<span class="white-dot">.</span></h3>
-        <p><a href="/policy/privacy">Click here to find out how we protect your data.</a></p>
+<section class="hero">
+    <h1 class="page-title">Policies<span class="dot">.</span></h1>
+    <p class="hero-sub-title">Links to all our public company policies.</p>
+    <div class="card-grid policy-grid">
+        <a class="card link-card" href="/policy/privacy/">
+            {{ partial "icon.html" (dict "name" "privacy" "size" 44) }}
+            <h2 class="card-title">Privacy Policy</h2>
+            <p class="card-text">How we protect your data.</p>
+            <span class="text-link">Read policy{{ partial "icon.html" (dict "name" "arrow-right" "size" 16) }}</span>
+        </a>
+        <a class="card link-card" href="/policy/disclosure/">
+            {{ partial "icon.html" (dict "name" "disclosure" "size" 44) }}
+            <h2 class="card-title">Disclosure Policy</h2>
+            <p class="card-text">How to make a security disclosure.</p>
+            <span class="text-link">Read policy{{ partial "icon.html" (dict "name" "arrow-right" "size" 16) }}</span>
+        </a>
+        <a class="card link-card" href="/policy/quality/">
+            {{ partial "icon.html" (dict "name" "quality" "size" 44) }}
+            <h2 class="card-title">Quality Policy</h2>
+            <p class="card-text">How we manage quality.</p>
+            <span class="text-link">Read policy{{ partial "icon.html" (dict "name" "arrow-right" "size" 16) }}</span>
+        </a>
     </div>
-
-    <div class="policy">
-        {{ $svg := resources.Get "img/icons/generic/disclosure.svg" | minify }}
-        <h2><img class="policy-icon" src="{{ $svg.RelPermalink }}" alt="Disclosure Icon" /> Disclosure Policy<span class="white-dot">.</span></h3>
-        <p><a href="/policy/disclosure">Click here to find out how to make a security disclosure to us.</a></p>
-    </div>
-    
-    <div class="policy">
-        {{ $svg := resources.Get "img/icons/generic/quality.svg" | minify }}
-        <h2><img class="policy-icon" src="{{ $svg.RelPermalink }}" alt="Quality Icon" /> Quality Policy<span class="white-dot">.</span></h3>
-        <p><a href="/policy/quality">Click here to find out about our quality management efforts.</a></p>
-    </div>
-</article>
+</section>
 
 {{ end }}

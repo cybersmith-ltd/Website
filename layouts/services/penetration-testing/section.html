@@ -1,0 +1,129 @@
+{{ define "structured-data" }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": {{ printf "%s#service" .Permalink }},
+    "name": {{ .Title }},
+    "serviceType": "Penetration testing",
+    "description": {{ .Description }},
+    "url": {{ .Permalink }},
+    "provider": {
+        "@id": "https://www.cybersmith.co.uk/#organisation"
+    },
+    "areaServed": "Worldwide",
+    "offers": {
+        "@type": "Offer",
+        "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": 800,
+            "unitText": "day",
+            "priceCurrency": "GBP",
+            "valueAddedTaxIncluded": false
+        }
+    }
+}
+</script>
+{{ end }}
+
+{{ define "main" }}
+
+<section class="hero">
+    {{ partial "icon.html" (dict "name" "crosshair" "size" 56) }}
+    <h1 class="page-title">Penetration Testing<span class="dot">.</span></h1>
+    <p class="hero-sub-title">Test your organisation the way a hacker would, then see how to fix it.</p>
+</section>
+
+<section class="section band-dark">
+    <div class="section-head">
+        <h2 class="section-title">What Is It<span class="dot">.</span></h2>
+        <p class="section-intro">Test all areas of the organisation including:</p>
+    </div>
+    <div class="card-grid overview-grid">
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "web" "size" 40) }}
+            <h3 class="card-title">Web Applications</h3>
+            <p class="card-text">Websites, web applications and APIs, tested by a full-stack developer who has built award-winning systems.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "server" "size" 40) }}
+            <h3 class="card-title">Infrastructure</h3>
+            <p class="card-text">Networks, servers and office IT, tested by a hands-on IT leader who has built infrastructure from the ground up.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "cloud" "size" 40) }}
+            <h3 class="card-title">Cloud</h3>
+            <p class="card-text">Cloud services such as Microsoft 365 and Azure, tested by an IT leader who has built and run hybrid cloud environments.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-head">
+        <h2 class="section-title">Why Us<span class="dot">.</span></h2>
+        <p class="section-intro">Every test is carried out by Jonathon. No handovers, no junior staff.</p>
+    </div>
+    <div class="card-grid why-grid">
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "specialist" "size" 40) }}
+            <h3 class="card-title">Specialist</h3>
+            <p class="card-text">Testing, auditing and certification is all we do.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "medal" "size" 40) }}
+            <h3 class="card-title">Qualified</h3>
+            <p class="card-text">Penetration testing certifications from CREST, OffSec and Hack The Box, so our report will be respected.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "briefcase" "size" 40) }}
+            <h3 class="card-title">Experienced</h3>
+            <p class="card-text">Over 17 years as a developer and IT leader. We understand the job your team does.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "speech-bubble" "size" 40) }}
+            <h3 class="card-title">Clear Communicators</h3>
+            <p class="card-text">Concise, plain English that technical and non-technical readers can both understand.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section band-dark">
+    <h2 class="section-title">Pricing<span class="dot">.</span></h2>
+    <div class="card price-panel">
+        <div class="price-col price-col--main">
+            <span class="comment-style">// Simple, fixed pricing</span>
+            <span class="price-headline">£800 + VAT per day</span>
+            <ul class="tick-list">
+                <li>
+                    {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
+                    <span>Fixed prices agreed upfront</span>
+                </li>
+                <li>
+                    {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
+                    <span>No hidden extras</span>
+                </li>
+                <li>
+                    {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
+                    <span>No charges if extra time is needed</span>
+                </li>
+            </ul>
+        </div>
+        <div class="price-col">
+            <span class="comment-style">// Typical engagements</span>
+            <ol class="price-list">
+                <li class="price-row">
+                    <span>Web application<span class="price-sub">From simple to complex apps</span></span>
+                    <span class="price">3–7 days<span class="price-sub">£2,400–£5,600</span></span>
+                </li>
+                <li class="price-row">
+                    <span>Infrastructure<span class="price-sub">Standard modern office</span></span>
+                    <span class="price">3–5 days<span class="price-sub">£2,400–£4,000</span></span>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+{{ partial "get-a-quote.html" . }}
+
+{{ end }}

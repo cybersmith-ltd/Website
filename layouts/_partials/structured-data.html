@@ -1,0 +1,353 @@
+{{- $pageType := "WebPage" -}}
+{{- if eq .RelPermalink "/about/" }}{{ $pageType = "AboutPage" }}{{ end -}}
+{{- if eq .RelPermalink "/contact/" }}{{ $pageType = "ContactPage" }}{{ end -}}
+{{- if in (slice "/services/" "/policy/") .RelPermalink }}{{ $pageType = "CollectionPage" }}{{ end -}}
+
+{{- $breadcrumbs := slice -}}
+{{- range .Ancestors.Reverse }}{{ if .Permalink }}{{ $breadcrumbs = $breadcrumbs | append . }}{{ end }}{{ end -}}
+{{- $breadcrumbs = $breadcrumbs | append . -}}
+{{ $logo := resources.Get "img/brand/cybersmith-logo-square.svg" | minify }}
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://www.cybersmith.co.uk/#organisation",
+            "name": "Cybersmith",
+            "legalName": "Cybersmith Ltd",
+            "url": "https://www.cybersmith.co.uk/",
+            "logo": {{ $logo.Permalink }},
+            "image": "https://www.cybersmith.co.uk/img/brand/cybersmith-share.png",
+            "description": "Cybersecurity testing, auditing and certification: Penetration Testing, Cyber Essentials Plus, Defence Cyber Certification and ISO 27001.",
+            "email": "info@cybersmith.co.uk",
+            "slogan": "Forging Your Security",
+            "telephone": "+447786003999",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "email": "info@cybersmith.co.uk",
+                "telephone": "+447786003999",
+                "availableLanguage": "en-GB",
+                "areaServed": "Worldwide"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Penharrows, Easby",
+                "addressLocality": "Richmond",
+                "addressRegion": "North Yorkshire",
+                "postalCode": "DL10 7EU",
+                "addressCountry": "GB"
+            },
+            "location": {
+                "@type": "Place",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 54.400167,
+                    "longitude": -1.713644
+                },
+                "hasMap": "https://www.google.co.uk/maps?q=54.400167,-1.713644"
+            },
+            "areaServed": "Worldwide",
+            "foundingDate": "2022",
+            "founder": {
+                "@id": "https://www.cybersmith.co.uk/#jonathon-smith"
+            },
+            "identifier": {
+                "@type": "PropertyValue",
+                "propertyID": "Companies House company number",
+                "value": "14118194"
+            },
+            "vatID": "GB455248187",
+            "sameAs": [
+                "https://find-and-update.company-information.service.gov.uk/company/14118194"
+            ],
+            "knowsAbout": [
+                "Penetration testing",
+                "Cyber Essentials Plus",
+                "Cyber Assurance",
+                "Defence Cyber Certification",
+                "ISO 27001",
+                "Cybersecurity auditing",
+                "Cybersecurity due diligence"
+            ],
+            "makesOffer": [
+                {{- range $index, $service := site.Data.services }}
+                {{- with site.GetPage (strings.TrimSuffix "/" $service.url) }}
+                {{- if $index }},{{ end }}
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": {{ .Title }},
+                        "description": {{ .Description }},
+                        "url": {{ .Permalink }}
+                    }
+                }
+                {{- end }}
+                {{- end }}
+            ]
+        },
+        {
+            "@type": "Person",
+            "@id": "https://www.cybersmith.co.uk/#jonathon-smith",
+            "name": "Jonathon Smith",
+            "jobTitle": "Lead Tester & Auditor",
+            "url": "https://www.cybersmith.co.uk/about/",
+            "image": "https://www.cybersmith.co.uk/img/photos/jonathon-smith.jpg",
+            "worksFor": {
+                "@id": "https://www.cybersmith.co.uk/#organisation"
+            },
+            "sameAs": [
+                "https://www.linkedin.com/in/jonathon-ronald-smith/"
+            ],
+            "memberOf": {
+                "@type": "Organization",
+                "name": "Chartered Institute of Information Security",
+                "url": "https://www.ciisec.org/"
+            },
+            "hasCredential": [
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "CREST Registered Penetration Tester",
+                "alternateName": "CRT",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "CREST",
+                    "url": "https://www.crest-approved.org/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "OffSec Certified Professional+",
+                "alternateName": "OSCP+",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "OffSec",
+                    "url": "https://www.offsec.com/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "HTB Certified Penetration Testing Specialist",
+                "alternateName": "CPTS",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "Hack The Box",
+                    "url": "https://www.hackthebox.com/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "HTB Certified Web Exploitation Specialist",
+                "alternateName": "CWES",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "Hack The Box",
+                    "url": "https://www.hackthebox.com/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Practical Network Penetration Tester",
+                "alternateName": "PNPT",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "TCM Security",
+                    "url": "https://tcm-sec.com/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Certified Information Systems Auditor",
+                "alternateName": "CISA",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "ISACA",
+                    "url": "https://www.isaca.org/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "ISO 27001 Lead Auditor Practitioner",
+                "alternateName": "ISO 27001",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "BSI",
+                    "url": "https://www.bsigroup.com/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Cyber Essentials Plus Lead Assessor",
+                "alternateName": "CE+",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "IASME",
+                    "url": "https://iasme.co.uk/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Cyber Assurance Assessor L2",
+                "alternateName": "CA",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "IASME",
+                    "url": "https://iasme.co.uk/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Defence Cyber Certification Assessor L1",
+                "alternateName": "CA",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "IASME",
+                    "url": "https://iasme.co.uk/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Certified Information Systems Security Professional",
+                "alternateName": "CISSP",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "ISC2",
+                    "url": "https://www.isc2.org/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Certified Information Security Manager",
+                "alternateName": "CISM",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "ISACA",
+                    "url": "https://www.isaca.org/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Certificate in Information Security Management Principles",
+                "alternateName": "CISMP",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "BCS, The Chartered Institute for IT",
+                    "url": "https://www.bcs.org/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Fellow of Information Privacy",
+                "alternateName": "FIP",
+                "credentialCategory": "fellowship",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "IAPP",
+                    "url": "https://iapp.org/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Certified Information Privacy Professional/Europe",
+                "alternateName": "CIPP/E",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "IAPP",
+                    "url": "https://iapp.org/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Certified Information Privacy Technologist",
+                "alternateName": "CIPT",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "IAPP",
+                    "url": "https://iapp.org/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Certified Information Privacy Manager",
+                "alternateName": "CIPM",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "IAPP",
+                    "url": "https://iapp.org/"
+                }
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Practitioner Certificate in Data Protection",
+                "alternateName": "PCDP",
+                "credentialCategory": "certification",
+                "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "BCS, The Chartered Institute for IT",
+                    "url": "https://www.bcs.org/"
+                }
+            }
+        ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://www.cybersmith.co.uk/#website",
+            "url": "https://www.cybersmith.co.uk/",
+            "name": "Cybersmith",
+            "inLanguage": "en-GB",
+            "publisher": {
+                "@id": "https://www.cybersmith.co.uk/#organisation"
+            }
+        },
+        {
+            "@type": {{ $pageType }},
+            "@id": {{ printf "%s#webpage" .Permalink }},
+            "url": {{ .Permalink }},
+            "name": {{ .Title }},
+            "description": {{ .Description }},
+            "inLanguage": "en-GB",
+            "isPartOf": {
+                "@id": "https://www.cybersmith.co.uk/#website"
+            },
+            "about": {
+                "@id": "https://www.cybersmith.co.uk/#organisation"
+            }
+            {{- if not .IsHome }},
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {{- range $index, $page := $breadcrumbs }}
+                    {{- if $index }},{{ end }}
+                    {
+                        "@type": "ListItem",
+                        "position": {{ add $index 1 }},
+                        "name": {{ if $page.IsHome }}"Home"{{ else }}{{ $page.Title }}{{ end }},
+                        "item": {{ $page.Permalink }}
+                    }
+                    {{- end }}
+                ]
+            }
+            {{- end }}
+        }
+    ]
+}
+</script>

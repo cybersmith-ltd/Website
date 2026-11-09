@@ -1,75 +1,205 @@
 {{ define "main" }}
 
-<article>
-    <h1>About<span class="yellow-dot">.</span></h1>
-    <div id="article-content">
-        <figure id="photo-jonathon-smith">
-            {{ $photo := resources.Get "img/photos/jonathon-smith.png" }}
-            <img src="{{ $photo.RelPermalink }}" alt="Photo of Jonathon Smith" />
-            <figcaption><span id="photo-caption-founder">Founder:</span> Jonathon Smith</figcaption>
-        </figure>
-        
-        <div id="article-text">
-            <h2>What<span class="white-dot">.</span></h2>
-            <p>We specialise in technical cybersecurity testing, such as Pentesting, Due Diligence Audits & Cyber Essentials+ Certification.</p>
-            
-            <h2>Why<span class="white-dot">.</span></h2>
-            <p>We only provide cybersecurity testing. Nothing else. We believe technical testing requires experts who are:</p>
-            <ul>
-                <li><span class="why-title">Specialists:</span> The focus on technical testing means we are experts in the technology we test &amp; how to test it.</li>
-                <li><span class="why-title">Qualified:</span> Accreditations from multiple leading industry bodies mean you can be confident in our ability to deliver.</li>
-                <li><span class="why-title">Experienced:</span> Over a decade as a web developer &amp; IT Manager means we understand the job your team are doing.</li>
-                <li><span class="why-title">Communicators:</span> Simple clear English means both technical &amp; non-technical readers understand our reports.</li>
-            </ul>
+<section class="hero">
+    <h1 class="page-title">About Us<span class="dot">.</span></h1>
+    <p class="hero-sub-title">Tested<span class="dot">.</span> Audited<span class="dot">.</span> Certified<span class="dot">.</span></p>
+    <p class="hero-intro">Jonathon Smith founded Cybersmith in 2022, after a decade leading the technology development of an automotive financial services company focused on supplier management, assurance and audit.</p>
+</section>
 
-            <h2>Who<span class="white-dot">.</span></h2>
-            <p>Cybersmith was founded by Jonathon Smith in 2022 to provide technical cybersecurity testing. He is a hands-on technology leader who spent over a decade building the tech of an automotive finance business, before leading its sale to private investors as Chief Information Officer &amp; IT Director.</p>
-            <p>When buying cybersecurity testing, you are paying for the person doing the test. We make it clear that Jonathon will be your tester.</p>
-            <p>He is an experienced web developer whose systems have won industry awards and an accomplished leader who has built the tech of a company from the ground up. He combines technical and communication skills, with a business focused mindset to deliver a high-end testing service.</p>
-            <p>Find out more about Jonathon on <a href="https://www.linkedin.com/in/jonathon-ronald-smith/" class="dotted-link">LinkedIn</a> or read his CV:</p>
-
-            <div id="cv-list">
-                <a class="panel" href="/cv/pentesting-and-cybersecurity-audit">
-                    <h3>Pentesting &amp; Cybersecurity Audit</h3>
-                    <div>
-                        <p>Cybersecurity testing specialist focused on: Pentesting, Due Diligence &amp; Cyber Essentials+.</p>
-                        
-                        {{ $web := resources.Get "img/icons/generic/magnifying-glass.svg" | minify }}
-                        <img src="{{ $web.RelPermalink }}" alt="Web Icon" />
-
-                        <p class="click-for-info">Click To Read This CV</p>
-                    </div>
-                </a>
-
-                <a class="panel" href="/cv/web-development">
-                    <h3>Web Development</h3>
-                    <div>
-                        <p>Full stack C# .NET Core web developer with a specialism in business and data systems.</p>
-                        
-                        {{ $web := resources.Get "img/icons/generic/web.svg" | minify }}
-                        <img src="{{ $web.RelPermalink }}" alt="Web Icon" />
-
-                        <p class="click-for-info">Click To Read This CV</p>
-                    </div>
-                </a>
-
-                <a class="panel" href="/cv/leadership">
-                    <h3>Leadership</h3>
-                    <div>
-                        <p>Seasoned technology leader with deep technical skills complemented by a commercial mindset.</p>
-                        
-                        {{ $web := resources.Get "img/icons/generic/leadership.svg" | minify }}
-                        <img src="{{ $web.RelPermalink }}" alt="Web Icon" />
-                        
-                        <p class="click-for-info">Click To Read This CV</p>
-                    </div>
-                </a>
-            </div>
-
-            <h2>Where<span class="white-dot">.</span></h2>
-            <p>We are based in Richmond (North Yorkshire), but have clients of all sizes throughout the UK and internationally.</p>
+<section class="section band-dark">
+    <div class="section-head">
+        <h2 class="section-title">Why<span class="dot">.</span></h2>
+        <p class="section-intro">Every test and audit is carried out by Jonathon.<br />No handovers, no junior staff. You get someone who is:</p>
+    </div>
+    <div class="card-grid why-grid">
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "specialist" "size" 40) }}
+            <h3 class="card-title">Specialist</h3>
+            <p class="card-text">Testing, auditing and certification is all we do.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "medal" "size" 40) }}
+            <h3 class="card-title">Qualified</h3>
+            <p class="card-text">Certified by leading industry bodies, including CREST, ISC2 and CIISec.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "briefcase" "size" 40) }}
+            <h3 class="card-title">Experienced</h3>
+            <p class="card-text">Over 17 years as a developer, leader and auditor in regulated sectors.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "speech-bubble" "size" 40) }}
+            <h3 class="card-title">Clear Communicator</h3>
+            <p class="card-text">Plain-English reports for technical and non-technical readers.</p>
         </div>
     </div>
-</article>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Who<span class="dot">.</span></h2>
+    <div class="about-who-row">
+        <div class="about-profile">
+            <img class="about-photo" src="{{ (resources.Get "img/photos/jonathon-smith.jpg").RelPermalink }}" alt="Jonathon Smith" width="320" height="400" />
+            <div>
+                <p class="about-name">Jonathon Smith</p>
+                <p class="about-role">Lead Tester &amp; Auditor</p>
+            </div>
+            <a class="btn" href="https://www.linkedin.com/in/jonathon-ronald-smith/"><img class="icon" src="{{ (resources.Get "img/icons/socials/linked-in.svg" | minify).RelPermalink }}" alt="" width="18" height="18" />LinkedIn</a>
+        </div>
+        <div class="about-bio">
+            <p class="about-bio-text">Before Cybersmith, Jonathon spent over a decade leading the technology of an automotive financial services business. It provided supplier management, assurance and auditing for over 9,000 garages, servicing a fleet of more than 1 million vehicles.</p>
+            <p class="about-bio-text">A hands-on technical leader, Jonathon is an experienced web developer whose systems won industry awards. He has built a company's technology from the ground up. He combines technical and communication skills with a business-focused mindset.</p>
+            <ol class="timeline">
+                <li class="timeline-item">
+                    <span class="timeline-dot current-role-dot"></span>
+                    <span class="timeline-date">Present</span>
+                    <span class="timeline-role">Lead Tester, Auditor &amp; Managing Director</span>
+                    <span class="timeline-text">Testing, auditing and certification for sole traders to multinationals.</span>
+                </li>
+                <li class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <span class="timeline-date">10+ years</span>
+                    <span class="timeline-role">Chief Information Officer, IT Director &amp; IT Manager</span>
+                    <span class="timeline-text">Built an automotive finance business's award-winning technology and led its sale to private investors.</span>
+                </li>
+                <li class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <span class="timeline-date">17+ years</span>
+                    <span class="timeline-role">Full-stack .NET Web Developer</span>
+                    <span class="timeline-text">Building business-critical web applications and data platforms in a regulated industry.</span>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="section band-dark">
+    <div class="section-head">
+        <h2 class="section-title">Qualifications<span class="dot">.</span></h2>
+        <p class="section-intro">20+ industry qualifications, including:</p>
+    </div>
+    <div class="card-grid qualification-grid">
+        <div class="card qualification-card">
+            <span class="comment-style">// Penetration testing</span>
+            <ul class="qualification-list">
+                <li>
+                    <strong>CRT</strong>
+                    <span class="qualification-name">· CREST Registered Penetration Tester</span>
+                </li>
+                <li>
+                    <strong>OSCP+</strong>
+                    <span class="qualification-name">· OffSec Certified Professional+</span>
+                </li>
+                <li>
+                    <strong>CPTS</strong>
+                    <span class="qualification-name">· HTB Certified Penetration Testing Specialist</span>
+                </li>
+                <li>
+                    <strong>CWES</strong>
+                    <span class="qualification-name">· HTB Certified Web Exploitation Specialist</span>
+                </li>
+                <li>
+                    <strong>PNPT</strong>
+                    <span class="qualification-name">· TCM Practical Network Penetration Tester</span>
+                </li>
+            </ul>
+        </div>
+        <div class="card qualification-card">
+            <span class="comment-style">// Audit &amp; certification</span>
+            <ul class="qualification-list">
+                <li>
+                    <strong>CISA</strong>
+                    <span class="qualification-name">· ISACA Certified Information Systems Auditor</span>
+                </li>
+                <li>
+                    <strong>ISO 27001</strong>
+                    <span class="qualification-name">· BSI Lead Auditor Practitioner</span>
+                </li>
+                <li>
+                    <strong>CE+</strong>
+                    <span class="qualification-name">· IASME Cyber Essentials Plus Lead Assessor</span>
+                </li>
+                <li>
+                    <strong>CA</strong>
+                    <span class="qualification-name">· IASME Cyber Assurance Assessor L2</span>
+                </li>
+                <li>
+                    <strong>DCC</strong>
+                    <span class="qualification-name">· IASME Defence Cyber Certification Assessor L1</span>
+                </li>
+            </ul>
+        </div>
+        <div class="card qualification-card">
+            <span class="comment-style">// Security leadership</span>
+            <ul class="qualification-list">
+                <li>
+                    <strong>CISSP</strong>
+                    <span class="qualification-name">· ISC2 Certified Information Systems Security Professional</span>
+                </li>
+                <li>
+                    <strong>CISM</strong>
+                    <span class="qualification-name">· ISACA Certified Information Security Manager</span>
+                </li>
+                <li>
+                    <strong>MCIIS</strong>
+                    <span class="qualification-name">· Member, Chartered Institute of Information Security</span>
+                </li>
+                <li>
+                    <strong>CISMP</strong>
+                    <span class="qualification-name">· BCS Information Security Management Principles</span>
+                </li>
+            </ul>
+        </div>
+        <div class="card qualification-card">
+            <span class="comment-style">// Data protection</span>
+            <ul class="qualification-list">
+                <li>
+                    <strong>FIP</strong>
+                    <span class="qualification-name">· IAPP Fellow of Information Privacy</span>
+                </li>
+                <li>
+                    <strong>CIPP/E</strong>
+                    <span class="qualification-name">· IAPP Certified Information Privacy Professional (Europe)</span>
+                </li>
+                <li>
+                    <strong>CIPT</strong>
+                    <span class="qualification-name">· IAPP Certified Information Privacy Technologist</span>
+                </li>
+                <li>
+                    <strong>CIPM</strong>
+                    <span class="qualification-name">· IAPP Certified Information Privacy Manager</span>
+                </li>
+                <li>
+                    <strong>PCDP</strong>
+                    <span class="qualification-name">· BCS Practitioner Certificate in Data Protection</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="cvs">
+    <div class="section-head">
+        <h2 class="section-title">CVs<span class="dot">.</span></h2>
+        <p class="section-intro">Read Jonathon's full background.</p>
+    </div>
+    <div class="card-grid cv-grid">
+        <a class="card cv-card" href="/cv/pentesting-and-cybersecurity-audit/">
+            <h3 class="card-title">Penetration Testing &amp; Audit</h3>
+            <p class="card-text">Cybersecurity specialist focused on testing, audit and certification.</p>
+            <span class="text-link">Read CV{{ partial "icon.html" (dict "name" "arrow-right" "size" 16) }}</span>
+        </a>
+        <a class="card cv-card" href="/cv/web-development/">
+            <h3 class="card-title">Web Development</h3>
+            <p class="card-text">Full-stack C# .NET Core web developer specialising in business and data systems.</p>
+            <span class="text-link">Read CV{{ partial "icon.html" (dict "name" "arrow-right" "size" 16) }}</span>
+        </a>
+        <a class="card cv-card" href="/cv/leadership/">
+            <h3 class="card-title">Leadership</h3>
+            <p class="card-text">Technology leader with deep technical skills, complemented by a commercial mindset.</p>
+            <span class="text-link">Read CV{{ partial "icon.html" (dict "name" "arrow-right" "size" 16) }}</span>
+        </a>
+    </div>
+</section>
 
 {{ end }}

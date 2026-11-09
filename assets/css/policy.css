@@ -1,22 +1,66 @@
+/* Policy pages */
 
-h2 {
-    padding: 0 0 2px 0;
-    margin: 0;
-    font-size: 1.2rem;
-    color: var(--light-yellow);
+.policy-grid {
+    --column-min: 280px;
+    margin-top: 24px;
 }
 
-main p {
-    margin: 0 0 10px;
+.policy {
+    --content-width: 712px;
+    padding: 72px var(--page-gutter) 96px;
 }
 
-main a:hover {
-    text-decoration: underline;
-    text-decoration-style: dotted;
-    color: var(--light-yellow);
+.policy h2 {
+    margin: 48px 0 14px;
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.4;
+    color: var(--amber);
 }
 
-main address {
+.policy h2:first-of-type {
+    margin-top: 40px;
+}
+
+.policy p {
+    margin: 0 0 14px;
+    color: var(--text-soft);
+}
+
+.policy ol,
+.policy ul {
+    margin: 0 0 14px;
+    padding-left: 24px;
+    color: var(--text-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.policy li::marker {
+    color: var(--amber);
+}
+
+.policy address {
+    margin: 0 0 14px;
     font-style: normal;
-    padding-left: 20px;
+}
+
+.policy address p {
+    margin: 0;
+}
+
+.policy a {
+    overflow-wrap: anywhere;
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+    .policy {
+        padding-block: 48px 64px;
+    }
 }

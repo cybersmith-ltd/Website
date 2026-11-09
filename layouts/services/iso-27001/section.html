@@ -1,0 +1,104 @@
+{{ define "structured-data" }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": {{ printf "%s#service" .Permalink }},
+    "name": {{ .Title }},
+    "serviceType": "ISO 27001 gap analysis and internal audit",
+    "description": {{ .Description }},
+    "url": {{ .Permalink }},
+    "provider": {
+        "@id": "https://www.cybersmith.co.uk/#organisation"
+    },
+    "areaServed": "Worldwide",
+    "offers": {
+        "@type": "Offer",
+        "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": 800,
+            "unitText": "day",
+            "priceCurrency": "GBP",
+            "valueAddedTaxIncluded": false
+        }
+    }
+}
+</script>
+{{ end }}
+
+{{ define "main" }}
+
+<section class="hero">
+    {{ partial "icon.html" (dict "name" "document" "size" 56) }}
+    <h1 class="page-title">ISO 27001<span class="dot">.</span></h1>
+    <p class="hero-sub-title">Globally recognised standard for information security management.</p>
+</section>
+
+<section class="section band-dark">
+    <div class="section-head">
+        <h2 class="section-title">What Is It<span class="dot">.</span></h2>
+        <p class="section-intro">ISO/IEC 27001 is the international standard for an information security management system (ISMS). Certification shows customers and partners that you manage information security risks in a structured, independently audited way.</p>
+    </div>
+    <div class="card-grid overview-grid">
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "checklist" "size" 40) }}
+            <h3 class="card-title">93 Controls</h3>
+            <p class="card-text">Annex A sets out 93 controls in four themes: organisational, people, physical and technological.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "scales" "size" 40) }}
+            <h3 class="card-title">Risk-Based</h3>
+            <p class="card-text">Assess your risks, then apply the controls your organisation needs to manage them.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "certificate-seal" "size" 40) }}
+            <h3 class="card-title">3 Year Certificate</h3>
+            <p class="card-text">Certification lasts three years, with annual surveillance audits to monitor compliance.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-head">
+        <h2 class="section-title">Why Us<span class="dot">.</span></h2>
+        <p class="section-intro">Carried out by Jonathon, a qualified ISO 27001 Lead Auditor.</p>
+    </div>
+    <div class="card-grid why-grid">
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "clipboard-check" "size" 40) }}
+            <h3 class="card-title">Gap Analysis</h3>
+            <p class="card-text">Preparing for certification? We assess you against ISO 27001 and tell you exactly what needs to be done.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "magnifying-glass" "size" 40) }}
+            <h3 class="card-title">Internal Audits</h3>
+            <p class="card-text">Already certified? Our independent internal audits help you stay compliant between certification audits.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section band-dark">
+    <h2 class="section-title">Pricing<span class="dot">.</span></h2>
+    <div class="card price-panel iso-pricing">
+        <span class="comment-style">// Simple, fixed pricing</span>
+        <span class="price-headline">£800 + VAT per day</span>
+        <ul class="tick-list">
+            <li>
+                {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
+                <span>Fixed prices agreed upfront</span>
+            </li>
+            <li>
+                {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
+                <span>No hidden extras</span>
+            </li>
+            <li>
+                {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
+                <span>No charges if extra time is needed</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+{{ partial "get-a-quote.html" . }}
+
+{{ end }}

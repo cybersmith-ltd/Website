@@ -1,0 +1,154 @@
+{{ define "structured-data" }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": {{ printf "%s#service" .Permalink }},
+    "name": {{ .Title }},
+    "serviceType": "Defence Cyber Certification",
+    "description": {{ .Description }},
+    "url": {{ .Permalink }},
+    "provider": {
+        "@id": "https://www.cybersmith.co.uk/#organisation"
+    },
+    "areaServed": "Worldwide",
+    "offers": [
+        {
+            "@type": "Offer",
+            "name": "DCC Level 0",
+            "priceSpecification": {
+                "@type": "PriceSpecification",
+                "minPrice": 250,
+                "maxPrice": 750,
+                "priceCurrency": "GBP",
+                "valueAddedTaxIncluded": false
+            }
+        },
+        {
+            "@type": "Offer",
+            "name": "DCC Level 1",
+            "priceSpecification": {
+                "@type": "PriceSpecification",
+                "minPrice": 2500,
+                "priceCurrency": "GBP",
+                "valueAddedTaxIncluded": false
+            }
+        }
+    ]
+}
+</script>
+{{ end }}
+
+{{ define "main" }}
+
+<section class="hero">
+    {{ partial "icon.html" (dict "name" "shield-chevrons" "size" 56) }}
+    <h1 class="page-title">Defence Cyber Certification<span class="dot">.</span></h1>
+    <p class="hero-sub-title">For suppliers to the MoD in the UK defence supply chain.</p>
+</section>
+
+<section class="section band-dark">
+    <div class="section-head">
+        <h2 class="section-title">What Is It<span class="dot">.</span></h2>
+        <p class="section-intro">Defence Cyber Certification (DCC) is the Ministry of Defence’s cybersecurity certification for its supply chain. It gives suppliers a single, organisation-wide certification to present in defence contracts.</p>
+    </div>
+    <div class="card-grid overview-grid">
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "padlock-plus" "size" 40) }}
+            <h3 class="card-title">Built on Cyber Essentials</h3>
+            <p class="card-text">Every level starts with Cyber Essentials. Levels 2 and 3 also require Cyber Essentials+.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "shield-chevrons" "size" 40) }}
+            <h3 class="card-title">4 Levels</h3>
+            <p class="card-text">Levels 0 to 3, with more controls at each level. The MoD sets the level a contract requires.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "certificate-seal" "size" 40) }}
+            <h3 class="card-title">3 Year Certificate</h3>
+            <p class="card-text">Certification lasts three years, with an attestation every year.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Why Us<span class="dot">.</span></h2>
+    <div class="card-grid why-grid">
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "specialist" "size" 40) }}
+            <h3 class="card-title">Specialist</h3>
+            <p class="card-text">Testing, auditing and certification is all we do.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "shield-chevrons" "size" 40) }}
+            <h3 class="card-title">Level 0 and Level 1</h3>
+            <p class="card-text">We certify defence suppliers to DCC Level 0 and Level 1.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "padlock-plus" "size" 40) }}
+            <h3 class="card-title">Cyber Essentials</h3>
+            <p class="card-text">As a certification body, we also certify the Cyber Essentials that every DCC level requires.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "price-tag" "size" 40) }}
+            <h3 class="card-title">Fixed Price</h3>
+            <p class="card-text">One price agreed upfront, with no extra fees for pretesting, retesting or consultancy.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section band-dark">
+    <div class="section-head">
+        <h2 class="section-title">Pricing<span class="dot">.</span></h2>
+        <p class="section-intro">Prices are indicative, based on the size of your organisation, and may vary depending on its complexity. Below are typical prices, but all prices are confirmed in a formal quote based on your company.</p>
+    </div>
+    <div class="card price-panel">
+        <div class="price-col">
+            <span class="comment-style">// DCC Level 0</span>
+            <ol class="price-list">
+                <li class="price-row">
+                    <span>Micro<span class="price-sub">1–9 employees</span></span>
+                    <span class="price">£250</span>
+                </li>
+                <li class="price-row">
+                    <span>Small<span class="price-sub">10–49 employees</span></span>
+                    <span class="price">£350</span>
+                </li>
+                <li class="price-row">
+                    <span>Medium<span class="price-sub">50–249 employees</span></span>
+                    <span class="price">£500</span>
+                </li>
+                <li class="price-row">
+                    <span>Large<span class="price-sub">250+ employees</span></span>
+                    <span class="price">£750</span>
+                </li>
+            </ol>
+        </div>
+        <div class="price-col">
+            <span class="comment-style">// DCC Level 1</span>
+            <ol class="price-list">
+                <li class="price-row">
+                    <span>Micro<span class="price-sub">1–9 employees</span></span>
+                    <span class="price">£2,500–£3,500</span>
+                </li>
+                <li class="price-row">
+                    <span>Small<span class="price-sub">10–49 employees</span></span>
+                    <span class="price">£3,500–£5,000</span>
+                </li>
+                <li class="price-row">
+                    <span>Medium<span class="price-sub">50–249 employees</span></span>
+                    <span class="price">£5,000–£7,500</span>
+                </li>
+                <li class="price-row">
+                    <span>Large<span class="price-sub">250+ employees</span></span>
+                    <span class="price">£7,500+</span>
+                </li>
+            </ol>
+        </div>
+        <p class="price-note">All prices + VAT. DCC also requires Cyber Essentials, which is priced separately.</p>
+    </div>
+</section>
+
+{{ partial "get-a-quote.html" . }}
+
+{{ end }}

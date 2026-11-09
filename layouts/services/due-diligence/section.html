@@ -1,0 +1,124 @@
+{{ define "structured-data" }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": {{ printf "%s#service" .Permalink }},
+    "name": {{ .Title }},
+    "serviceType": "Cybersecurity due diligence",
+    "description": {{ .Description }},
+    "url": {{ .Permalink }},
+    "provider": {
+        "@id": "https://www.cybersmith.co.uk/#organisation"
+    },
+    "areaServed": "Worldwide",
+    "offers": {
+        "@type": "Offer",
+        "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": 800,
+            "unitText": "day",
+            "priceCurrency": "GBP",
+            "valueAddedTaxIncluded": false
+        }
+    }
+}
+</script>
+{{ end }}
+
+{{ define "main" }}
+
+<section class="hero">
+    {{ partial "icon.html" (dict "name" "magnifying-glass" "size" 56) }}
+    <h1 class="page-title">Due Diligence<span class="dot">.</span></h1>
+    <p class="hero-sub-title">Independent cybersecurity assessment before you buy or invest.</p>
+</section>
+
+<section class="section band-dark">
+    <div class="section-head">
+        <h2 class="section-title">What Is It<span class="dot">.</span></h2>
+        <p class="section-intro">Cybersecurity due diligence is an independent assessment of a company’s security before you buy, merge with or invest in it. It shows you the risks you are taking on, so you can negotiate and plan with confidence.</p>
+    </div>
+    <div class="card-grid overview-grid">
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "crosshair" "size" 40) }}
+            <h3 class="card-title">Security Testing</h3>
+            <p class="card-text">Hands-on testing of the company’s key systems, applications and infrastructure.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "document" "size" 40) }}
+            <h3 class="card-title">Governance Review</h3>
+            <p class="card-text">A review of policies, processes, certifications and compliance.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "speech-bubble" "size" 40) }}
+            <h3 class="card-title">Clear Report</h3>
+            <p class="card-text">Plain-English findings and risks, ready for your deal team and investors.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Why Us<span class="dot">.</span></h2>
+    <div class="card-grid why-grid">
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "briefcase" "size" 40) }}
+            <h3 class="card-title">Experienced</h3>
+            <p class="card-text">We have been through due diligence as a seller, a buyer and a service provider, so we know what every party needs.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "medal" "size" 40) }}
+            <h3 class="card-title">Qualified</h3>
+            <p class="card-text">Penetration testing certifications from leading bodies such as CREST, so our report will be respected.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "stopwatch" "size" 40) }}
+            <h3 class="card-title">Timely</h3>
+            <p class="card-text">If you have a deadline, we meet it. Our fastest due diligence turnaround was two weeks.</p>
+        </div>
+        <div class="card feature">
+            {{ partial "icon.html" (dict "name" "speech-bubble" "size" 40) }}
+            <h3 class="card-title">Clear Communicators</h3>
+            <p class="card-text">Concise, plain English that technical and non-technical readers can both understand.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section band-dark">
+    <h2 class="section-title">Pricing<span class="dot">.</span></h2>
+    <div class="card price-panel">
+        <div class="price-col price-col--main">
+            <span class="comment-style">// Simple, fixed pricing</span>
+            <span class="price-headline">£800 + VAT per day</span>
+            <span class="price-intro">The work required depends on what is being assessed.</span>
+            <ul class="tick-list">
+                <li>
+                    {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
+                    <span>Fixed prices agreed upfront</span>
+                </li>
+                <li>
+                    {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
+                    <span>No hidden extras</span>
+                </li>
+                <li>
+                    {{ partial "icon.html" (dict "name" "tick" "size" 16) }}
+                    <span>No charges if extra time is needed</span>
+                </li>
+            </ul>
+        </div>
+        <div class="price-col">
+            <span class="comment-style">// Typical engagement</span>
+            <ol class="price-list">
+                <li class="price-row">
+                    <span>Typical assessment<span class="price-sub">Depends on the size of the business</span></span>
+                    <span class="price">5–10 days</span>
+                </li>
+            </ol>
+        </div>
+        <p class="price-note">Typical assessments cost £4,000–£8,000.</p>
+    </div>
+</section>
+
+{{ partial "get-a-quote.html" . }}
+
+{{ end }}

@@ -1,66 +1,31 @@
-main {
-    text-align: center;
+/* Contact page */
+
+.contact-hero {
+    --content-width: 952px;
 }
 
-    main h2 {
-        margin: 0 0 2px 0;
-        color: var(--light-yellow);
-        font-size: 1.2rem;
-    }
-
-    main p {
-        margin: 0;
-    }
-
-        main a:hover p {
-            text-decoration: underline;
-        }
-
-    main address {
-        font-style: normal;
-    }
-
-@media (max-width: 1023px) {
-    .contact-icon {
-        width: 10%;
-        display: block;
-        margin: 5px auto 10px;
-    }
-
-    main a {
-        display: block;
-        border-bottom: 1.5px dashed var(--dark-grey);
-        margin-bottom: 10px;
-
-    }
+.contact-grid {
+    --column-min: 340px;
+    margin-top: 16px;
 }
 
-@media (min-width: 1024px) {
-    main {
-        display: flex;
-        flex-direction: column;
-    }
+.contact-card {
+    padding: 36px 30px;
+    align-items: center;
+}
 
-    #contact-details, #address-details {
-        flex-grow: 1;
-        display: grid; 
-        grid-template-rows: 1fr; 
-        gap: 0 5px;
-        align-items: center;
-    }
+.contact-value {
+    font-size: 22px;
+    font-weight: 600;
+}
 
-        #contact-details { 
-            grid-template-columns: 1fr 1fr;
-            border-bottom: 1.5px dashed var(--dark-grey);
-        }
+.contact-email {
+    overflow-wrap: anywhere;
+}
 
-        #address-details{
-            grid-template-columns: 1fr 1fr 1fr; 
-        }
-
-    .contact-icon {
-        height: 10vh;
-        display: block;
-        margin: 15px auto 0;
-    }
+.contact-address {
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
 }

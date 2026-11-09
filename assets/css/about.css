@@ -1,124 +1,139 @@
-article h1 {
-    margin-bottom: 10px;
+/* About page */
+
+.about-who-row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 56px;
+    align-items: flex-start;
 }
 
-article h2 {
-    margin: 0 0 5px;
-    color: var(--light-yellow);
-    font-size: 1.4rem;
+.about-profile {
+    flex: 1 1 260px;
+    max-width: 320px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
 }
 
-article p {
-    margin: 0 0 15px;
+.about-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 14px;
+    border: 3px solid var(--amber);
 }
 
-.panel {
-    background: var(--background-gray);
-    color: black;
-    font-family: var(--arial);
-    border: 1px solid black;
-    border-radius: 10px;
+.about-name {
+    margin: 0;
+    font-family: var(--krona-one);
+    font-size: 22px;
+    line-height: 1.3;
 }
 
-.why-title {
-    color: var(--light-yellow);
+.about-role {
+    margin: 4px 0 0;
+    color: var(--text-muted);
 }
 
-#cv-list {
-    margin: 10px 0;
+.about-bio-text {
+    margin: 0;
+    color: var(--text-soft);
 }
 
-    #cv-list a {
-        display: flex;
-        flex-direction: column;
-        transition: transform .1s linear;
-    }
-
-        #cv-list a:hover {
-            transform: scale(1.01);
-        }
-
-            #cv-list a:hover .click-for-info {
-                text-decoration: underline;
-            }
-
-    #cv-list h3 {
-        text-align: center;
-        border-bottom: 1px solid black;
-        margin: 5px;
-    }
-
-    #cv-list a div {
-        padding: 0 10px 10px 10px;
-        text-align: center;
-        display: flex;
-        flex-grow: 1;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    #cv-list p {
-        margin: 0;
-    }
-
-    #cv-list img {
-        height: 50px;
-        margin: 5px 0;
-    }
-
-    #cv-list .click-for-info {
-        font-weight: bold;
-    }
-
-@media (max-width: 1023px) {
-    #photo-jonathon-smith {
-        display: none;
-    }
-
-    article h2 {
-        text-align: center;
-    }
-
-    #cv-list a {
-        margin-bottom: 10px;
-    }
+.about-bio {
+    flex: 999 1 480px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
-@media (min-width: 1024px) {
-    #article-content {
-        display: flex;
-    }
+.timeline {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+    border-left: 2px dashed rgba(245, 159, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+}
 
-    #cv-list {
-        display: flex;
-        align-items: stretch;
-    }
+.timeline-item {
+    padding: 0 0 26px 28px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
 
-    #cv-list a {
-        flex-grow: 1;
-        flex-basis: 0;
-        margin-right: 10px;
-    }
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
 
-    #cv-list a:last-child {
-        margin-right: 0;
-    }
+.timeline-dot {
+    position: absolute;
+    left: -9px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--navy);
+    border: 2px solid var(--amber);
+}
 
-    #photo-jonathon-smith {
-        margin: 0;
-    }
-    
-    #photo-jonathon-smith img {
-        margin-right: 20px;
-        border-radius: 10px;
-        border: 2px solid white;
-    }
-    
-    #photo-jonathon-smith figcaption {
-        text-align: center;
-    }
+.current-role-dot {
+    background: var(--amber);
+    border-color: var(--navy);
+}
 
-    #photo-caption-founder {
-        color: var(--light-yellow);
-    }
+.timeline-date {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--amber);
+}
+
+.timeline-role {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.timeline-text {
+    color: var(--text-soft);
+    font-size: 16px;
+}
+
+.qualification-grid {
+    --column-min: 260px;
+}
+
+.qualification-card {
+    padding: 28px 24px;
+    gap: 14px;
+}
+
+.qualification-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.qualification-name {
+    color: var(--text-muted);
+}
+
+.cv-grid {
+    --column-min: 320px;
+}
+
+.cv-card {
+    padding: 32px 28px;
 }
