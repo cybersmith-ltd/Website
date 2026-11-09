@@ -1,1 +1,4 @@
 User-agent: *
+Disallow:
+
+Sitemap: https://www.cybersmith.co.uk/sitemap.xml
