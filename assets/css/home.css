@@ -1,4 +1,6 @@
-/* Home page */
+.service-grid {
+    --column-min: 340px;
+}
 
 .qualification-pills {
     margin: 12px 0 0;

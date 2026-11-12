@@ -1,5 +1,3 @@
-/* CV pages. These load after base.css. */
-
 :root {
     --dark-blue: #002147;
     --background-gray: #ddd;
@@ -306,6 +304,7 @@ h1 {
 
     #personal-summary p {
         text-align: left;
+        margin-top: 10px;
     }
 
     #achievements-skills section {
@@ -330,35 +329,53 @@ h1 {
             width: 50%;
         }
 
-    #qualifications-intro {
-        text-align: left;
+    .qualification-areas {
+        margin-bottom: 0;
     }
 
-    .qualification-name-abbr {
-        margin-right: 5px;
-    }
+        .qualification-names {
+            padding-left:5px;
+        }
 
-    .qualification-body::before {
-        content: ' - ';
-    }
+            .qualification-names li {
+                list-style: none;
+                margin-bottom: 6px;
+            }
 
-    .qualification-name {
-        width: 100%;
-    }
+            .qualification-name-abbr {
+                margin-right: 5px;
+            }
+
+            .qualification-body::before {
+                content: ' - ';
+            }
+
+            .qualification-name {
+                width: 100%;
+            }
 
     .employment-panel h2 {
         text-align: center;
     }
 
-    .employer-and-time {
-        justify-content: space-around;
-        flex-direction: row-reverse;
-        text-align: center;
+    .employment-description ul {
+        padding-left: 5px;
     }
 
-        .employment-duration {
-            display: block;
+        .employment-description li {
+            list-style: none;
+            margin-bottom: 6px;
         }
+
+        .employer-and-time {
+            justify-content: space-around;
+            flex-direction: row-reverse;
+            text-align: center;
+        }
+
+            .employment-duration {
+                display: block;
+            }
 }
 
 @media screen and (min-width: 1024px) {
@@ -497,13 +514,18 @@ h1 {
         margin: 0;
     }
 
-    .qualification-name-abbr {
-        width: 10%;
+    #qualifications {
+        break-after: page;
+        margin: 0;
     }
 
-    .qualification-body {
-        width: 15%;
-    }
+        .qualification-name-abbr {
+            width: 10%;
+        }
+
+        .qualification-body {
+            width: 15%;
+        }
 
     .employment-panel {
         margin-top: 0;
@@ -520,11 +542,6 @@ h1 {
         }
 
     #personal-summary {
-        margin: 0;
-    }
-
-    #qualifications {
-        break-after: page;
         margin: 0;
     }
 }
