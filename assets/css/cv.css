@@ -311,6 +311,10 @@ h1 {
         margin-top: 10px;
     }
 
+    #achievements-skills ul {
+        padding-left: 20px;
+    }
+
     .tech-sector {
         border-bottom: 1px solid black;
     }
@@ -334,13 +338,12 @@ h1 {
     }
 
         .qualification-names {
-            padding-left:5px;
+            padding-left:20px;
         }
 
-            .qualification-names li {
-                list-style: none;
-                margin-bottom: 6px;
-            }
+        .qualification-names li {
+            margin-bottom:5px;
+        }
 
             .qualification-name-abbr {
                 margin-right: 5px;
@@ -359,13 +362,8 @@ h1 {
     }
 
     .employment-description ul {
-        padding-left: 5px;
+        padding-left: 20px;
     }
-
-        .employment-description li {
-            list-style: none;
-            margin-bottom: 6px;
-        }
 
         .employer-and-time {
             justify-content: space-around;
