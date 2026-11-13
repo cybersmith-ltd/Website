@@ -12,7 +12,7 @@
         align-items: center;
     }
 
-    .contact-email, contact-phone {
+    .contact-email, .contact-phone {
         font-size: 22px;
         font-weight: 600;
     }
